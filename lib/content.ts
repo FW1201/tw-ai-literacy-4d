@@ -7,14 +7,58 @@ export const site = {
 };
 
 export const nav = [
-  { id: "positioning", label: "定位" },
-  { id: "framework", label: "4D 框架" },
-  { id: "mechanisms", label: "能力與限制" },
-  { id: "grade-bands", label: "分年段" },
-  { id: "assessment", label: "評量" },
-  { id: "workshop", label: "研習工作坊" },
-  { id: "students", label: "學生素養" },
-  { id: "sources", label: "資料來源" },
+  { href: "/framework", label: "4D 框架" },
+  { href: "/how-ai-works", label: "AI 怎麼運作" },
+  { href: "/classroom", label: "課堂實踐" },
+  { href: "/prompts", label: "提示詞庫" },
+  { href: "/workshop", label: "研習工作坊" },
+  { href: "/sources", label: "資料來源" },
+];
+
+/** 首頁入口卡。order 決定排列，accent 決定是否用深色卡（維持 DESIGN.md 的明暗交替節奏）。 */
+export const entries = [
+  {
+    href: "/framework",
+    order: "01",
+    title: "4D 框架",
+    detail: "委託・描述・辨識・盡責。四個動作、兩組循環，以及它們各自對應到教育部原則與 UNESCO 能力的哪一格。",
+    meta: "含概念動畫",
+  },
+  {
+    href: "/how-ai-works",
+    order: "02",
+    title: "AI 怎麼運作",
+    detail: "接龍式生成、知識截止、工作記憶、可控性——四個機制的白話版，每個都配一支可以直接投影給學生看的動畫。",
+    meta: "含 4 支概念動畫",
+  },
+  {
+    href: "/classroom",
+    order: "03",
+    title: "課堂實踐",
+    detail: "分年段設計原則、三種評量策略、實際可照做的教學案例，以及學生素養篇的在地化對照。",
+    meta: "含實踐案例",
+  },
+  {
+    href: "/prompts",
+    order: "04",
+    title: "提示詞庫",
+    detail: "可直接複製使用的 Claude 提示詞，依 4D 環節、使用情境與模式分類，每一筆都附上用完該檢查什麼。",
+    meta: "教學四類",
+  },
+  {
+    href: "/workshop",
+    order: "05",
+    title: "研習工作坊",
+    detail: "90 分鐘的教師研習流程、配套文件，以及給校長與教學組長的導入提醒。",
+    meta: "含配套文件",
+  },
+  {
+    href: "/sources",
+    order: "06",
+    title: "資料來源",
+    detail: "每一節內容的出處。本站是整編與在地化改寫，不是原創框架。",
+    meta: "",
+  },
 ];
 
 export const hero = {
@@ -117,6 +161,7 @@ export const mechanisms = [
   {
     name: "接龍式生成",
     en: "Next Token Prediction",
+    anim: "next-token" as const,
     plain: "AI 是一個字一個字接龍接出來的，不是先想好答案再打字。",
     myth: "AI 講的都是查證過的事實。",
     reality: "AI 只是在接續「聽起來最合理」的下一個字，容易在冷門或需要精確細節的地方編造。",
@@ -125,6 +170,7 @@ export const mechanisms = [
   {
     name: "知識",
     en: "Knowledge",
+    anim: "knowledge-cutoff" as const,
     plain: "AI 懂多少，跟那件事在訓練資料裡有沒有「常出現」有關。",
     myth: "AI 什麼都知道，而且是最新的。",
     reality: "AI 有知識截止日期。冷門、小眾、在地的內容（例如台灣特定法規、校內規定）容易錯或過時。",
@@ -133,6 +179,7 @@ export const mechanisms = [
   {
     name: "工作記憶",
     en: "Working Memory",
+    anim: "context-window" as const,
     plain: "AI 只記得「這次對話框裡」的內容，換一個新對話就忘光。",
     myth: "AI 記得我們之前聊過的所有事。",
     reality: "脈絡視窗是硬限制，太長的文件中間段落容易被忽略。",
@@ -141,6 +188,7 @@ export const mechanisms = [
   {
     name: "可控性",
     en: "Steerability",
+    anim: "steerability" as const,
     plain: "指令愈具體、愈能驗證，AI 愈聽話；愈模糊，AI 愈容易自由發揮。",
     myth: "只要講清楚要求，AI 一定會完全照做。",
     reality: "短而可驗證的指令（「用表格呈現」「限 100 字」）服從度高；抽象指令（「寫得有創意一點」）服從度低。",

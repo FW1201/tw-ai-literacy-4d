@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@remotion/player": "4.0.524",
     "next": "16.3.5",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "remotion": "4.0.524"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
