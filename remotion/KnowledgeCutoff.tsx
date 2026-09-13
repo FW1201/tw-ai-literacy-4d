@@ -12,7 +12,7 @@ import { Eyebrow, Stage, Takeaway, Title } from "./shared";
  *  430–540  字卡
  */
 
-const AXIS_Y = 430;
+const AXIS_Y = 372;
 const AXIS_L = 110;
 const AXIS_R = 1170;
 const CUTOFF_X = 880;
@@ -30,8 +30,8 @@ const QUERIES = [
   {
     at: 230,
     label: "2026 年新頒的法規",
-    x: 990,
-    y: AXIS_Y - 90,
+    x: 1010,
+    y: AXIS_Y - 96,
     verdict: "在截止線之後 → 它沒讀過，卻仍會自信作答",
     color: T.accentAmber,
     mark: "!",
@@ -39,8 +39,8 @@ const QUERIES = [
   {
     at: 340,
     label: "本校 113 學年度行事曆",
-    x: 640,
-    y: AXIS_Y + 92,
+    x: 700,
+    y: AXIS_Y + 74,
     verdict: "從來不在訓練資料裡 → 必須自己提供",
     color: T.error,
     mark: "✕",
@@ -108,14 +108,14 @@ export function KnowledgeCutoff() {
         {/* 知識截止線 */}
         <line
           x1={CUTOFF_X}
-          y1={AXIS_Y - 240 * cutoff}
+          y1={AXIS_Y - 198 * cutoff}
           x2={CUTOFF_X}
-          y2={AXIS_Y + 150 * cutoff}
+          y2={AXIS_Y + 128 * cutoff}
           stroke={T.primary}
           strokeWidth={3}
           strokeDasharray="9 7"
         />
-        <text x={CUTOFF_X + 14} y={AXIS_Y - 218} fill={T.primary} fontSize={22} opacity={cutoff}>
+        <text x={CUTOFF_X + 14} y={AXIS_Y - 176} fill={T.primary} fontSize={22} opacity={cutoff}>
           知識截止
         </text>
 
@@ -148,10 +148,12 @@ export function KnowledgeCutoff() {
           style={{
             position: "absolute",
             left: 64,
-            bottom: 170,
+            top: 492,
+            maxWidth: 560,
             color: active.color,
-            fontSize: 27,
+            fontSize: 26,
             fontWeight: 500,
+            lineHeight: 1.3,
           }}
         >
           {active.verdict}

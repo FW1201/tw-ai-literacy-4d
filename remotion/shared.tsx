@@ -1,7 +1,19 @@
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT, T } from "@/lib/tokens";
 
-/** 所有動畫共用的舞台：深色底 + 固定內距。 */
+/**
+ * 版面安全區（1280×720）。
+ * 底部 180px 留給 Takeaway 字卡——所有內容都必須結束在 CONTENT_BOTTOM 之上，
+ * 否則字卡會蓋住它。這是先前五支動畫共同的重疊來源。
+ */
+export const STAGE_W = 1280;
+export const STAGE_H = 720;
+export const PAD = 64;
+export const TAKEAWAY_BAND = 180;
+export const CONTENT_BOTTOM = STAGE_H - TAKEAWAY_BAND; // 540
+export const CONTENT_W = STAGE_W - PAD * 2; // 1152
+
+/** 所有動畫共用的舞台：深色底 + 固定內距 + 為字卡保留的底部空間。 */
 export function Stage({ children }: { children: React.ReactNode }) {
   return (
     <div
@@ -10,7 +22,8 @@ export function Stage({ children }: { children: React.ReactNode }) {
         height: "100%",
         background: T.surfaceDark,
         fontFamily: FONT.sans,
-        padding: 64,
+        padding: PAD,
+        paddingBottom: TAKEAWAY_BAND,
         display: "flex",
         flexDirection: "column",
         position: "relative",

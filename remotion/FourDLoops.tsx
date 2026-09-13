@@ -17,12 +17,13 @@ const NODES = [
   { id: "discernment", zh: "辨識", en: "Discernment", col: 1, row: 1 },
 ] as const;
 
+// 底部 y = ORIGIN_Y + NODE_H*2 + GAP_Y = 176+264+68 = 508，在 CONTENT_BOTTOM(540) 之上
 const NODE_W = 300;
-const NODE_H = 150;
+const NODE_H = 132;
 const GAP_X = 200;
-const GAP_Y = 90;
+const GAP_Y = 68;
 const ORIGIN_X = 190;
-const ORIGIN_Y = 190;
+const ORIGIN_Y = 176;
 
 function nodePos(col: number, row: number) {
   return {
@@ -99,10 +100,10 @@ export function FourDLoops() {
                 boxShadow: glow ? `0 0 40px ${T.primary}40` : "none",
               }}
             >
-              <div style={{ fontFamily: FONT.display, fontSize: 56, color: T.onDark, lineHeight: 1 }}>
+              <div style={{ fontFamily: FONT.display, fontSize: 50, color: T.onDark, lineHeight: 1 }}>
                 {n.zh}
               </div>
-              <div style={{ fontSize: 19, color: T.onDarkSoft, marginTop: 10, letterSpacing: "0.04em" }}>
+              <div style={{ fontSize: 18, color: T.onDarkSoft, marginTop: 8, letterSpacing: "0.04em" }}>
                 {n.en}
               </div>
             </div>

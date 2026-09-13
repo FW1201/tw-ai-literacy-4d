@@ -107,16 +107,16 @@ function Scene({
   const warned = warnAt !== undefined && frame >= warnAt;
 
   return (
-    <div style={{ marginTop: 44 }}>
+    <div style={{ marginTop: 26 }}>
       {/* 句子 */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           gap: 4,
-          fontSize: 46,
+          fontSize: 44,
           color: T.onDark,
-          minHeight: 64,
+          minHeight: 56,
         }}
       >
         <span>{sentence.slice(0, shown)}</span>
@@ -144,7 +144,7 @@ function Scene({
       </div>
 
       {/* 候選機率條 */}
-      <div style={{ marginTop: 34, display: "flex", flexDirection: "column", gap: 14 }}>
+      <div style={{ marginTop: 26, display: "flex", flexDirection: "column", gap: 11 }}>
         {candidates.map((c, i) => {
           const appear = interpolate(frame, [barsStart + i * 9, barsStart + i * 9 + 16], [0, 1], {
             extrapolateLeft: "clamp",
@@ -168,7 +168,7 @@ function Scene({
               >
                 {c.token}
               </div>
-              <div style={{ flex: 1, height: 30, background: T.surfaceDarkElevated, borderRadius: 6 }}>
+              <div style={{ flex: 1, height: 28, background: T.surfaceDarkElevated, borderRadius: 6 }}>
                 <div
                   style={{
                     width: `${c.p * 100 * appear}%`,
@@ -197,7 +197,7 @@ function Scene({
       </div>
 
       {/* 分佈判讀 */}
-      <div style={{ marginTop: 26, fontSize: 24, height: 34 }}>
+      <div style={{ marginTop: 18, fontSize: 23, height: 30 }}>
         {tone === "confident" && frame >= barsStart + 60 && (
           <span style={{ color: T.accentTeal }}>▲ 有明顯尖峰：模型很有把握</span>
         )}
