@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tw-ai-literacy-4d",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "--port", "4900"],
+      "port": 4900
+    }
+  ]
+}
