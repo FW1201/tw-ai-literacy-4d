@@ -26,7 +26,7 @@ const fluencyCounts = Object.fromEntries(
 ) as Record<Fluency, number>;
 
 export const metadata: Metadata = {
-  title: "提示詞庫｜AI Fluency 4D 框架",
+  title: "Prompt Reference｜AI Fluency 4D 框架",
   description: "60 筆可以直接複製的 Claude 教學提示詞，能依使用情境和 4D 動作篩選。",
 };
 
@@ -36,7 +36,7 @@ export default function PromptsPage() {
       <PageHeader
         index="04"
         eyebrow="提示詞庫"
-        title={`${PROMPTS.length} 筆提示詞`}
+        title="Prompt Reference"
         lead="複製下來，把方括號裡的年級和主題換成你的，就能貼進 Claude。"
         highlights={highlights["/prompts"]}
       />
