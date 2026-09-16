@@ -10,10 +10,10 @@ export const site = {
 };
 
 export const nav = [
-  { href: "/framework", label: "4D 框架" },
-  { href: "/how-ai-works", label: "AI 怎麼運作" },
-  { href: "/classroom", label: "課堂實踐" },
-  { href: "/prompts", label: "提示詞庫" },
+  { href: "/framework", label: "定義 AI Fluency" },
+  { href: "/how-ai-works", label: "Generative AI 基本原理" },
+  { href: "/classroom", label: "課堂實踐與思考" },
+  { href: "/prompts", label: "Prompt Reference" },
   { href: "/sources", label: "資料來源" },
 ];
 
@@ -22,28 +22,28 @@ export const entries = [
   {
     href: "/framework",
     order: "01",
-    title: "4D 框架",
+    title: "定義 AI Fluency",
     detail: "委託、描述、辨識、盡責，一次看懂。",
     meta: "含概念動畫",
   },
   {
     href: "/how-ai-works",
     order: "02",
-    title: "AI 怎麼運作",
+    title: "Generative AI 基本原理",
     detail: "AI 為什麼會出錯？用四個例子說清楚，附上課可投影的動畫。",
     meta: "含 4 支概念動畫",
   },
   {
     href: "/classroom",
     order: "03",
-    title: "課堂實踐",
+    title: "課堂實踐與思考",
     detail: "不同年級怎麼教、作業怎麼評，再加上 16 個現成案例。",
     meta: "含實踐案例",
   },
   {
     href: "/prompts",
     order: "04",
-    title: "提示詞庫",
+    title: "Prompt Reference",
     detail: "挑一筆複製下來，換掉年級和主題就能用。",
     meta: "教學四類",
   },

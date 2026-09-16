@@ -51,9 +51,6 @@ export function Nav() {
           <a href={site.repo} target="_blank" rel="noreferrer" className="btn btn-secondary">
             GitHub
           </a>
-          <Link href="/prompts" className="btn btn-primary">
-            提示詞庫
-          </Link>
         </div>
 
         <button
