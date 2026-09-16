@@ -34,9 +34,10 @@ export default function SourcesPage() {
   return (
     <>
       <PageHeader
+        index="05"
         eyebrow="資料來源"
-        title="每一節內容的出處"
-        lead="本站是整編與在地化改寫，不是原創框架。每筆來源都標出它支撐哪一頁。"
+        title="出處"
+        lead="本站是整編與在地化改寫，每筆來源都標出用在哪一頁。"
         highlights={highlights["/sources"]}
       />
 

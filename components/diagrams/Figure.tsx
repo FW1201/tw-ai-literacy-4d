@@ -18,7 +18,7 @@ export function Figure({
   const dark = tone === "dark";
   return (
     <figure
-      className={`rounded-lg p-6 sm:p-8 ${
+      className={`reveal rounded-lg p-6 sm:p-8 ${
         dark ? "bg-surface-dark-soft" : "border border-hairline bg-canvas"
       }`}
     >

@@ -34,17 +34,18 @@ export default function PromptsPage() {
   return (
     <>
       <PageHeader
+        index="04"
         eyebrow="提示詞庫"
-        title={`可以直接貼進 Claude 的 ${PROMPTS.length} 筆提示詞`}
-        lead="每一筆都是完整成品。方括號的地方換成你自己的年級與主題即可。"
+        title={`${PROMPTS.length} 筆提示詞`}
+        lead="複製、換掉方括號裡的年級與主題，就能貼進 Claude。"
         highlights={highlights["/prompts"]}
       />
 
       <Band tone="card">
         <Heading
-          eyebrow="先看懂結構"
-          title="每一筆提示詞，都是這七段"
-          lead="知道每段在做什麼，改寫時就知道該動哪裡。"
+          eyebrow="結構"
+          title="七段組成"
+          lead="知道每段的作用，改寫時就知道動哪裡。"
         />
         <div className="mt-10">
           <Figure>
@@ -72,7 +73,7 @@ export default function PromptsPage() {
               data-category={p.category}
               data-fluency={p.fluency.join(",")}
               data-search={`${p.title} ${p.scenario} ${CATEGORY_LABEL[p.category]}`}
-              className="flex flex-col rounded-lg border border-hairline bg-canvas p-5"
+              className="lift flex flex-col rounded-lg border border-hairline bg-canvas p-5"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex flex-wrap items-center gap-1.5">

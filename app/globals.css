@@ -57,6 +57,9 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
 
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
   /* Section rhythm */
   --spacing-section: 96px;
 }
@@ -121,6 +124,137 @@ p, li, dd, dt {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Motion — 換頁、進場、導覽列、卡片（見 DESIGN.md Local overrides）
+------------------------------------------------------------------ */
+
+/* 換頁：只有 <main> 內容淡入上移，導覽列與頁尾維持不動 */
+::view-transition-old(.page) {
+  animation: 160ms ease-in both page-out;
+}
+::view-transition-new(.page) {
+  animation: 280ms var(--ease-out) both page-in;
+}
+@keyframes page-out {
+  to { opacity: 0; }
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+/* 導覽列：捲動後出現陰影 */
+@supports (animation-timeline: scroll()) {
+  .site-header {
+    animation: header-shadow linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 64px;
+  }
+  @keyframes header-shadow {
+    to { box-shadow: 0 6px 24px -12px rgb(20 20 19 / 0.18); }
+  }
+
+  /* 區塊進場：不支援的瀏覽器直接顯示，不會卡在透明 */
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(24px); }
+  }
+}
+
+/* 目前頁面的珊瑚底線，hover 時預覽 */
+.nav-link {
+  position: relative;
+  transition: color 200ms var(--ease-out);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 260ms var(--ease-out);
+}
+.nav-link:hover::after {
+  transform: scaleX(0.4);
+}
+.nav-link[data-active]::after {
+  transform: scaleX(1);
+}
+
+/* 標誌：hover 時輕轉 */
+.mark {
+  transition: transform 500ms var(--ease-out);
+  box-shadow: 0 2px 8px -2px rgb(20 20 19 / 0.35);
+}
+a:hover > .mark {
+  transform: rotate(-12deg) scale(1.04);
+}
+
+/* 卡片：上移＋柔和陰影 */
+.lift {
+  transition:
+    transform 220ms var(--ease-out),
+    box-shadow 220ms var(--ease-out),
+    background-color 220ms var(--ease-out),
+    border-color 220ms var(--ease-out);
+}
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -18px rgb(20 20 19 / 0.35);
+  border-color: var(--color-surface-cream-strong);
+}
+
+/* 頁首的珊瑚短線，載入時由左展開 */
+.rule-grow {
+  display: block;
+  width: 40px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  transform-origin: left;
+  animation: rule-grow 700ms 120ms var(--ease-out) both;
+}
+@keyframes rule-grow {
+  from { transform: scaleX(0); }
+}
+
+/* 頁首重點條依序浮現 */
+.highlight-in {
+  animation: page-in 500ms var(--ease-out) both;
+}
+
+/* details 展開時內容淡入 */
+details[open] > :not(summary) {
+  animation: fade-in 260ms var(--ease-out);
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .site-header,
+  .highlight-in,
+  .rule-grow {
+    animation: none !important;
+  }
+  .lift:hover,
+  a:hover > .mark {
+    transform: none;
+  }
+  ::view-transition-old(.page),
+  ::view-transition-new(.page) {
+    animation: none;
   }
 }
 
@@ -239,7 +373,7 @@ p, li, dd, dt {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1;
-    transition: background-color 120ms ease, color 120ms ease;
+    transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out), transform 200ms var(--ease-out);
   }
 
   .btn-primary {

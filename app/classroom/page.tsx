@@ -26,9 +26,10 @@ export default function ClassroomPage() {
   return (
     <>
       <PageHeader
+        index="03"
         eyebrow="課堂實踐"
-        title="在我這一堂課，長什麼樣子"
-        lead="不同學段側重哪個 D、評量怎麼收斂、案例怎麼跑，以及學生端的素養怎麼在地化。"
+        title="帶進課堂"
+        lead="學段側重、評量時機、實作案例，以及學生版的在地化。"
         highlights={highlights["/classroom"]}
       />
       <SectionNav
@@ -42,9 +43,9 @@ export default function ClassroomPage() {
 
       <Band id="grade-bands" tone="soft">
         <Heading
-          eyebrow="分年段設計"
-          title="不同學段，側重不同的 D"
-          lead="對應 108 課綱三學段與核心素養 B2 重新編排。"
+          eyebrow="分年段"
+          title="學段側重"
+          lead="依 108 課綱三學段與核心素養 B2 編排。"
         />
         <div className="mt-10">
           <Figure caption="國小先練「看出錯」，國中練「說清楚、再檢查」，高中把「負責與揭露」變成習慣。">
@@ -53,7 +54,7 @@ export default function ClassroomPage() {
         </div>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {gradeBands.map((g) => (
-            <article key={g.band} className="flex flex-col rounded-lg bg-canvas p-6">
+            <article key={g.band} className="reveal lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
               <h3 className="title-lg">{g.band}</h3>
               <p className="caption mt-1 text-primary-ink">{g.focus}</p>
               <p className="title-sm mt-5">{g.form}</p>
@@ -68,9 +69,9 @@ export default function ClassroomPage() {
 
       <Band id="assessment" tone="canvas">
         <Heading
-          eyebrow="評量整合"
-          title="評量放在作業的哪個時間點"
-          lead="三種策略各守一個時間點，接回既有的評量規準與抗 AI 評量設計。"
+          eyebrow="評量"
+          title="評量時機"
+          lead="三種策略，各守作業的一個時間點。"
         />
         <div className="mt-10 rounded-lg border border-hairline p-6 sm:p-8">
           <Stepper
@@ -86,9 +87,9 @@ export default function ClassroomPage() {
 
       <Band id="students" tone="soft">
         <Heading
-          eyebrow="學生素養篇"
-          title="從大學生涯情境，改寫成台灣升學情境"
-          lead="來源課程面向大學生的履歷與面試，這裡改寫為國高中生會遇到的情境。"
+          eyebrow="學生素養"
+          title="在地化改寫"
+          lead="原課程寫給大學生，這裡改成國高中生的升學情境。"
         />
         <ul className="mt-10 space-y-4">
           {studentLocalization.map((row) => (
@@ -113,8 +114,8 @@ function Cases() {
       <div className="shell">
         <Heading
           eyebrow="實踐案例"
-          title={`${CASES.length} 個可以照著做的案例`}
-          lead="選一個類別，每個案例都拆成步驟；有附提示詞的可以直接複製。"
+          title={`${CASES.length} 個案例`}
+          lead="選一個類別，照步驟做；附提示詞的可直接複製。"
         />
 
         <div className="mt-8">
@@ -131,7 +132,7 @@ function Cases() {
           <div key={track} data-track={track} hidden={track !== first} className="mt-6">
             <div className="grid gap-5 lg:grid-cols-2">
               {CASES.filter((c) => c.track === track).map((c) => (
-                <article key={c.id} data-prompt-card className="flex flex-col rounded-lg bg-canvas p-6 sm:p-7">
+                <article key={c.id} data-prompt-card className="lift flex flex-col rounded-lg border border-transparent bg-canvas p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="badge-pill">{c.level}</span>
                     {c.modes.map((m) => (

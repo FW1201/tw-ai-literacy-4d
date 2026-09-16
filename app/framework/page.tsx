@@ -22,9 +22,10 @@ export default function FrameworkPage() {
   return (
     <>
       <PageHeader
+        index="01"
         eyebrow="4D 框架"
-        title="委託・描述・辨識・盡責"
-        lead="委派多少、講清楚什麼、看得出哪裡不對、最後誰負責——四個問題問完，一輪 AI 協作才算做完。"
+        title="四個動作"
+        lead="委託、描述、辨識、盡責——問完這四題，一輪 AI 協作才算做完。"
         highlights={highlights["/framework"]}
       />
 
@@ -33,7 +34,7 @@ export default function FrameworkPage() {
           {fourD.map((d, i) => {
             const { first, rest } = splitFirst(d.detail);
             return (
-              <li key={d.en} className="flex flex-col rounded-lg bg-canvas p-6">
+              <li key={d.en} className="reveal lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
                 <div className="flex items-baseline justify-between">
                   <h2 className="display-md">{d.zh}</h2>
                   <span className="font-display lining-nums text-2xl text-primary">
@@ -61,9 +62,9 @@ export default function FrameworkPage() {
         <div className="shell">
           <Heading
             onDark
-            eyebrow="概念動畫"
-            title="兩組循環實際怎麼轉"
-            lead="動畫可暫停、可拉時間軸，適合直接投影講解。"
+            eyebrow="動畫"
+            title="兩組循環"
+            lead="可暫停、可拖曳，適合直接投影。"
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-start">
             <ConceptPlayer id="four-d-loops" />
@@ -87,8 +88,8 @@ export default function FrameworkPage() {
       <Band tone="soft">
         <Heading
           eyebrow="對照"
-          title="每個 D，對到哪一條原則、哪一種能力"
-          lead="4D 不是新規範，而是把既有的原則與能力落到動作上。"
+          title="原則與能力"
+          lead="4D 不是新規範，是把既有原則落到動作上。"
         />
         <div className="mt-10">
           <Figure

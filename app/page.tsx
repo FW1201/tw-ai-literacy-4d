@@ -54,8 +54,8 @@ function Positioning() {
         <div>
           <Heading
             eyebrow="定位"
-            title="不是第四套框架，是補上中間那一層"
-            lead="上兩層回答「可不可以」與「要多厲害」，最下層是課堂本身。4D 是把上面翻譯成下面的那一步。"
+            title="補上中間那一層"
+            lead="上兩層回答「可不可以」與「要多厲害」，4D 把它們翻成課堂裡的動作。"
           />
           <p className="caption mt-6 text-muted">點開任一層看完整說明</p>
         </div>
@@ -68,13 +68,13 @@ function Positioning() {
 function Entries() {
   return (
     <Band tone="canvas">
-      <Heading eyebrow="從哪裡開始" title="五個入口，依你的需要挑" />
+      <Heading eyebrow="從哪裡開始" title="五個入口" />
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {entries.map((entry) => (
           <Link
             key={entry.href}
             href={entry.href}
-            className="group flex flex-col rounded-lg border border-hairline bg-canvas p-7 transition-colors hover:bg-surface-card"
+            className="reveal lift group flex flex-col rounded-lg border border-hairline bg-canvas p-7"
           >
             <div className="flex items-baseline justify-between gap-3">
               <span className="font-display lining-nums text-3xl leading-none text-primary-ink">
@@ -85,7 +85,9 @@ function Entries() {
             <h3 className="title-lg mt-5">{entry.title}</h3>
             <p className="caption mt-1 text-primary-ink">適合：{AUDIENCE[entry.href]}</p>
             <p className="body-sm mt-3 grow text-body">{entry.detail}</p>
-            <span className="caption mt-6 text-primary-ink">前往 →</span>
+            <span className="caption mt-6 text-primary-ink">
+              前往 <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </span>
           </Link>
         ))}
       </div>

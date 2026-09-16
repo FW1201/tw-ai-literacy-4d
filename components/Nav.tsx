@@ -16,11 +16,13 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 bg-canvas/95 backdrop-blur-sm border-b border-hairline-soft">
+    <header className="site-header sticky top-0 z-50 border-b border-hairline-soft bg-canvas/85 backdrop-blur-md">
       <div className="shell flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <Mark />
-          <span className="title-sm tracking-tight">{site.title}</span>
+        <Link href="/" className="group/brand flex items-center gap-3 shrink-0">
+          <Mark size={36} />
+          <span className="title-sm tracking-tight transition-colors group-hover/brand:text-primary-ink">
+            {site.title}
+          </span>
         </Link>
 
         <nav className="hidden xl:flex items-center gap-1">
@@ -31,10 +33,9 @@ export function Nav() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`whitespace-nowrap px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  active
-                    ? "bg-surface-card text-ink"
-                    : "text-muted hover:text-ink hover:bg-surface-card"
+                data-active={active || undefined}
+                className={`nav-link whitespace-nowrap px-3 py-2 text-sm font-medium ${
+                  active ? "text-ink" : "text-muted hover:text-ink"
                 }`}
               >
                 {item.label}
@@ -69,9 +70,15 @@ export function Nav() {
         </button>
       </div>
 
-      {open && (
-        <div className="xl:hidden border-t border-hairline-soft bg-canvas">
-          <div className="shell py-4 flex flex-col gap-1">
+      {/* 行動版選單：用 grid-rows 0fr→1fr 做高度展開，關閉時 inert 讓鍵盤跳過 */}
+      <div
+        inert={!open}
+        className={`grid transition-[grid-template-rows] duration-300 ease-out xl:hidden ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className={`overflow-hidden bg-canvas transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}>
+          <div className="shell flex flex-col gap-1 border-t border-hairline-soft py-4">
             {nav.map((item) => {
               const active = pathname === item.href;
               return (
@@ -97,7 +104,7 @@ export function Nav() {
             </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

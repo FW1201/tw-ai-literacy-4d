@@ -16,9 +16,10 @@ export default function HowAiWorksPage() {
   return (
     <>
       <PageHeader
-        eyebrow="能力與限制"
-        title="AI 為什麼會「一本正經地講錯」"
-        lead="要看得出哪裡不對，先要知道它為什麼會這樣。四個機制不必背英文，看圖和動畫就懂。"
+        index="02"
+        eyebrow="AI 怎麼運作"
+        title="為什麼會講錯"
+        lead="先懂四個機制，才看得出哪裡不對。看圖和動畫就好，不必背英文。"
         highlights={highlights["/how-ai-works"]}
       />
 
@@ -29,7 +30,7 @@ export default function HowAiWorksPage() {
           className={`scroll-mt-20 py-14 sm:py-20 ${i % 2 === 0 ? "bg-surface-dark" : "bg-surface-dark-soft"}`}
         >
           <div className="shell grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
-            <div>
+            <div className="reveal">
               <p className="caption-upper text-primary">機制 {String(i + 1).padStart(2, "0")}</p>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h2 className="display-md text-on-dark">{m.name}</h2>
@@ -73,8 +74,8 @@ export default function HowAiWorksPage() {
       <Band tone="soft">
         <Heading
           eyebrow="綜合"
-          title="四個機制，常常同時發生"
-          lead="看到奇怪的輸出，先認出是哪幾個機制在相撞，再對症下藥——比重新送出一次有用得多。"
+          title="同時發生"
+          lead="輸出怪怪的，先認出是哪幾個機制相撞，再對症下藥。"
         />
         <div className="mt-10">
           <Venn4

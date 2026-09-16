@@ -2,7 +2,7 @@ export const site = {
   title: "AI 素養教育 4D 框架",
   tagline: "把「AI 素養」拆成四個可教、可評量、可在課堂重複練習的動作",
   author: "吳奇（Kevin Wu）",
-  updated: "2026-09-13",
+  updated: "2026-09-16",
   repo: "https://github.com/FW1201/tw-ai-literacy-4d",
 };
 
@@ -20,35 +20,35 @@ export const entries = [
     href: "/framework",
     order: "01",
     title: "4D 框架",
-    detail: "委託・描述・辨識・盡責。四個動作、兩組循環，以及它們各自對應到教育部原則與 UNESCO 能力的哪一格。",
+    detail: "委託・描述・辨識・盡責，四個動作與兩組循環。",
     meta: "含概念動畫",
   },
   {
     href: "/how-ai-works",
     order: "02",
     title: "AI 怎麼運作",
-    detail: "接龍式生成、知識截止、工作記憶、可控性——四個機制的白話版，每個都配一支可以直接投影給學生看的動畫。",
+    detail: "四個機制的白話版，各配一支可投影的動畫。",
     meta: "含 4 支概念動畫",
   },
   {
     href: "/classroom",
     order: "03",
     title: "課堂實踐",
-    detail: "分年段設計原則、三種評量策略、實際可照做的教學案例，以及學生素養篇的在地化對照。",
+    detail: "學段側重、評量時機與可照做的案例。",
     meta: "含實踐案例",
   },
   {
     href: "/prompts",
     order: "04",
     title: "提示詞庫",
-    detail: "可直接複製使用的 Claude 提示詞，依 4D 環節、使用情境與模式分類，每一筆都附上用完該檢查什麼。",
+    detail: "可直接複製的 Claude 提示詞，依情境與 4D 篩選。",
     meta: "教學四類",
   },
   {
     href: "/sources",
     order: "05",
     title: "資料來源",
-    detail: "每一節內容的出處。本站是整編與在地化改寫，不是原創框架。",
+    detail: "每一節內容的出處與對應頁面。",
     meta: "",
   },
 ];
@@ -363,11 +363,11 @@ export const disclaimer =
 
 /** 每頁頁首的「本頁重點」三點條。 */
 export const highlights: Record<string, string[]> = {
-  "/framework": ["四個動作各問一個問題", "兩組循環：戰術與問責", "對到教育部與 UNESCO 哪一格"],
-  "/how-ai-works": ["AI 為什麼會自信地講錯", "四個機制的強項與弱點", "每個機制一支可投影的動畫"],
-  "/classroom": ["三個學段各自側重哪個 D", "評量在作業前中後怎麼收", "16 個可以照做的案例"],
-  "/prompts": ["先看懂一筆提示詞的七段", "依情境、4D、關鍵字找", "一鍵複製，換掉方括號就能用"],
-  "/sources": ["每一節內容的出處", "來源與頁面的對應", "本站的非官方聲明"],
+  "/framework": ["四個動作", "兩組循環", "原則對照"],
+  "/how-ai-works": ["四個機制", "強項與弱點", "可投影動畫"],
+  "/classroom": ["學段側重", "評量時機", "16 個案例"],
+  "/prompts": ["七段結構", "篩選與搜尋", "一鍵複製"],
+  "/sources": ["課程與文件", "對應頁面", "非官方聲明"],
 };
 
 /** 四個機制在真實任務中相撞的例子（/how-ai-works 結尾的交疊圖）。 */

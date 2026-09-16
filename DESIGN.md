@@ -619,3 +619,15 @@ When photography is used (rare — mostly testimonials), avatars crop to perfect
 ### Diagrams — 概念圖
 
 長文以 `components/diagrams/` 的靜態圖呈現。圖內強調色只用 `primary`，語意色只用 `accent-teal`（正確）、`accent-amber`（注意）、`error`（錯誤），與 `remotion/` 動畫一致。
+
+### Brand mark — 作者徽章
+
+站台標誌改用作者的金色徽章（`public/brand/logo.png`，favicon 由 `app/icon.png`、`app/apple-icon.png` 提供），一律圓形裁切、不加底色。徽章的金色只出現在標誌本身，不擴散成介面色。
+
+### Motion — 流暢度
+
+- 換頁：React `<ViewTransition>` 淡入並上移 8px（240ms），導覽列與頁尾不參與
+- 區塊進場：`.reveal` 以 CSS scroll-driven animation 淡入上移，不支援的瀏覽器直接顯示
+- 導覽列：捲動後出現細陰影；目前頁面以珊瑚底線標示
+- 卡片 hover：上移 2px ＋ 柔和陰影，統一 `--ease-out` 200ms
+- `prefers-reduced-motion: reduce` 時上述動效全部關閉

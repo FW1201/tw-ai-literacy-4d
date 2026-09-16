@@ -12,7 +12,7 @@ export function PageNav({ current }: { current: string }) {
       <div className="shell grid gap-4 sm:grid-cols-2">
         <Link
           href={prev.href}
-          className="rounded-lg border border-hairline p-5 transition-colors hover:bg-surface-card"
+          className="lift group rounded-lg border border-hairline p-5"
         >
           <span className="caption text-muted">← 上一頁</span>
           <span className="title-md mt-1 block">{prev.label}</span>
@@ -20,7 +20,7 @@ export function PageNav({ current }: { current: string }) {
         {next && (
           <Link
             href={next.href}
-            className="rounded-lg border border-hairline p-5 text-right transition-colors hover:bg-surface-card sm:col-start-2"
+            className="lift group rounded-lg border border-hairline p-5 text-right sm:col-start-2"
           >
             <span className="caption text-muted">下一頁 →</span>
             <span className="title-md mt-1 block">{next.label}</span>
