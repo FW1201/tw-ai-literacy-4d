@@ -3,7 +3,7 @@ export function SectionNav({ items }: { items: { id: string; label: string }[] }
   return (
     <nav
       aria-label="本頁目錄"
-      className="sticky top-16 z-40 border-y border-hairline-soft bg-canvas/95 backdrop-blur-sm"
+      className="sticky top-16 z-40 border-y border-hairline-soft bg-canvas"
     >
       <div className="shell flex gap-1 overflow-x-auto py-2">
         {items.map((it) => (

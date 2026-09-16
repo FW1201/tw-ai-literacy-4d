@@ -16,7 +16,7 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="site-header sticky top-0 z-50 border-b border-hairline-soft bg-canvas/85 backdrop-blur-md">
+    <header className="site-header sticky top-0 z-50 border-b border-hairline-soft bg-canvas">
       <div className="shell flex h-16 items-center justify-between gap-6">
         <Link href="/" className="group/brand flex items-center gap-3 shrink-0">
           <Mark size={36} />

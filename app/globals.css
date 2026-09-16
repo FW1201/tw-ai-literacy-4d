@@ -131,15 +131,10 @@ p, li, dd, dt {
    Motion — 換頁、進場、導覽列、卡片（見 DESIGN.md Local overrides）
 ------------------------------------------------------------------ */
 
-/* 換頁：只有 <main> 內容淡入上移，導覽列與頁尾維持不動 */
-::view-transition-old(.page) {
-  animation: 160ms ease-in both page-out;
-}
-::view-transition-new(.page) {
-  animation: 280ms var(--ease-out) both page-in;
-}
-@keyframes page-out {
-  to { opacity: 0; }
+/* 換頁：app/template.tsx 每次換頁重新掛載，內容淡入上移；導覽列與頁尾不動。
+   只用 backwards 填充，動畫結束後不留 transform，避免影響內部的 sticky 元素 */
+.page-enter {
+  animation: page-in 320ms var(--ease-out) backwards;
 }
 @keyframes page-in {
   from { opacity: 0; transform: translateY(8px); }
@@ -154,16 +149,6 @@ p, li, dd, dt {
   }
   @keyframes header-shadow {
     to { box-shadow: 0 6px 24px -12px rgb(20 20 19 / 0.18); }
-  }
-
-  /* 區塊進場：不支援的瀏覽器直接顯示，不會卡在透明 */
-  .reveal {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 40%;
-  }
-  @keyframes reveal {
-    from { opacity: 0; transform: translateY(24px); }
   }
 }
 
@@ -242,7 +227,6 @@ details[open] > :not(summary) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
   .site-header,
   .highlight-in,
   .rule-grow {
@@ -252,8 +236,7 @@ details[open] > :not(summary) {
   a:hover > .mark {
     transform: none;
   }
-  ::view-transition-old(.page),
-  ::view-transition-new(.page) {
+  .page-enter {
     animation: none;
   }
 }

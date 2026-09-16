@@ -67,7 +67,7 @@ export function PromptFilter({
   };
 
   return (
-    <div ref={rootRef} className="rounded-lg border border-hairline bg-canvas/95 p-4 shadow-[0_1px_3px_rgba(20,20,19,0.08)] backdrop-blur-sm sm:p-5">
+    <div ref={rootRef} className="rounded-lg border border-hairline bg-canvas p-4 shadow-[0_1px_3px_rgba(20,20,19,0.08)] sm:p-5">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
         <label htmlFor={inputId} className="sr-only">
           搜尋提示詞
@@ -77,7 +77,7 @@ export function PromptFilter({
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="搜尋：例如 差異化、學習單、TOCFL"
+          placeholder="搜尋，例如：差異化、學習單、TOCFL"
           className="h-11 w-full rounded-md border border-hairline bg-canvas px-4 text-base text-ink placeholder:text-muted focus:border-primary-strong lg:w-80"
         />
         <p className="body-sm text-muted lg:ml-auto" aria-live="polite">
@@ -111,7 +111,7 @@ export function PromptFilter({
             {FLUENCY_LABEL[f]}
           </Chip>
         ))}
-        <span className="caption ml-1 self-center text-muted">每一筆都含「辨識」——檢查產出這一步省不掉</span>
+        <span className="caption ml-1 self-center text-muted">每一筆都包含「辨識」，因為檢查 AI 給的結果這一步不能省</span>
       </FilterRow>
     </div>
   );

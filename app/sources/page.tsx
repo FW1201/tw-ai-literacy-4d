@@ -6,7 +6,7 @@ import { disclaimer, highlights, nav, sources } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "資料來源｜AI 素養教育 4D 框架",
-  description: "本站每一節內容的出處。整編與在地化改寫，不是原創框架。",
+  description: "本站每一段內容的出處。內容是整理、改寫而來，並非自創的框架。",
 };
 
 /** 來源 → 它支撐的頁面。以來源標籤的關鍵字比對。 */
@@ -37,7 +37,7 @@ export default function SourcesPage() {
         index="05"
         eyebrow="資料來源"
         title="出處"
-        lead="本站是整編與在地化改寫，每筆來源都標出用在哪一頁。"
+        lead="這個網站的內容是整理、改寫而來的，每筆來源都標出用在哪幾頁。"
         highlights={highlights["/sources"]}
       />
 

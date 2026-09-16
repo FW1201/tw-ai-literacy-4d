@@ -28,7 +28,7 @@ export const ANIMATIONS: Record<AnimationId, AnimationMeta> = {
   "next-token": {
     id: "next-token",
     title: "接龍式生成",
-    caption: "每個字都是猜出來的。機率分佈愈平坦，代表模型自己也愈不確定——那正是編造集中的地方。",
+    caption: "每個字都是猜出來的。候選字的機率越接近，代表 AI 自己也越沒把握，編造最常出現在這種時候。",
     fluency: "辨識 Discernment",
     durationInFrames: 24 * FPS,
     fps: FPS,
@@ -38,7 +38,7 @@ export const ANIMATIONS: Record<AnimationId, AnimationMeta> = {
   "knowledge-cutoff": {
     id: "knowledge-cutoff",
     title: "知識截止與資料密度",
-    caption: "常見且久遠的事，模型答得穩；冷門、最新、校內的事，資料本來就不在裡面，要自己給。",
+    caption: "常見又有年代的事，AI 答得比較穩；冷門、最新或學校內部的事，它根本沒讀過，要由你提供。",
     fluency: "辨識 Discernment",
     durationInFrames: 18 * FPS,
     fps: FPS,
@@ -48,7 +48,7 @@ export const ANIMATIONS: Record<AnimationId, AnimationMeta> = {
   "context-window": {
     id: "context-window",
     title: "脈絡視窗",
-    caption: "它只記得框裡的東西。太長的文件中段會被稀釋，換一個新對話則整個清空。",
+    caption: "它只記得框裡的內容。文件太長，中間容易被忽略；開了新對話，前面的內容就不見了。",
     fluency: "描述 Description",
     durationInFrames: 20 * FPS,
     fps: FPS,
@@ -58,7 +58,7 @@ export const ANIMATIONS: Record<AnimationId, AnimationMeta> = {
   steerability: {
     id: "steerability",
     title: "可控性",
-    caption: "可驗證的限制讓輸出收斂，抽象的形容詞讓輸出發散。這是描述品質的直接後果。",
+    caption: "容易檢查的限制，會讓結果更貼近你要的；抽象的形容詞，會讓結果越跑越散。描述寫得好不好，差別就在這裡。",
     fluency: "描述 Description",
     durationInFrames: 18 * FPS,
     fps: FPS,
@@ -67,9 +67,9 @@ export const ANIMATIONS: Record<AnimationId, AnimationMeta> = {
   },
   "four-d-loops": {
     id: "four-d-loops",
-    title: "AI Fluency 雙迴圈",
-    caption: "委託與盡責管理策略和倫理；描述與辨識管理互動和品質。",
-    fluency: "四環節全覽",
+    title: "4D 的兩組循環",
+    caption: "委託和盡責，處理的是要不要用、用了誰負責；描述和辨識，處理的是怎麼溝通、結果好不好。",
+    fluency: "四個動作一起看",
     durationInFrames: 20 * FPS,
     fps: FPS,
     width: 1280,

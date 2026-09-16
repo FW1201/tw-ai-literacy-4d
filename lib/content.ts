@@ -1,6 +1,6 @@
 export const site = {
   title: "AI 素養教育 4D 框架",
-  tagline: "把「AI 素養」拆成四個可教、可評量、可在課堂重複練習的動作",
+  tagline: "把 AI 素養拆成四件老師教得來、學生練得起來的事",
   author: "吳奇（Kevin Wu）",
   updated: "2026-09-16",
   repo: "https://github.com/FW1201/tw-ai-literacy-4d",
@@ -20,35 +20,35 @@ export const entries = [
     href: "/framework",
     order: "01",
     title: "4D 框架",
-    detail: "委託・描述・辨識・盡責，四個動作與兩組循環。",
+    detail: "委託、描述、辨識、盡責，一次看懂。",
     meta: "含概念動畫",
   },
   {
     href: "/how-ai-works",
     order: "02",
     title: "AI 怎麼運作",
-    detail: "四個機制的白話版，各配一支可投影的動畫。",
+    detail: "AI 為什麼會出錯？用四個例子說清楚，附上課可投影的動畫。",
     meta: "含 4 支概念動畫",
   },
   {
     href: "/classroom",
     order: "03",
     title: "課堂實踐",
-    detail: "學段側重、評量時機與可照做的案例。",
+    detail: "不同年級怎麼教、作業怎麼評，再加上 16 個現成案例。",
     meta: "含實踐案例",
   },
   {
     href: "/prompts",
     order: "04",
     title: "提示詞庫",
-    detail: "可直接複製的 Claude 提示詞，依情境與 4D 篩選。",
+    detail: "挑一筆複製下來，換掉年級和主題就能用。",
     meta: "教學四類",
   },
   {
     href: "/sources",
     order: "05",
     title: "資料來源",
-    detail: "每一節內容的出處與對應頁面。",
+    detail: "每段內容從哪裡來，這裡都查得到。",
     meta: "",
   },
 ];
@@ -57,44 +57,44 @@ export const hero = {
   eyebrow: "台灣 K-12 教育現場整編",
   headline: "原則已經有了。\n那「怎麼做」呢？",
   lead:
-    "教育部的指引劃出紅線，UNESCO 的能力框架標示等級——但兩者都沒有告訴老師，實際跟 AI 互動的那一刻，具體要做哪幾件事。這份教材補上中間那一層。",
+    "教育部的指引告訴我們哪些事不能做，UNESCO 告訴我們能力要到哪裡。可是打開 AI 的那一刻，老師到底該做什麼？這個網站想回答這一題。",
 };
 
 export const fourLayers = [
   {
     order: "01",
     label: "法源／原則",
-    short: "劃出紅線：可以做什麼、不可以做什麼",
+    short: "哪些事可以做、哪些不行",
     title: "教育部《高級中等以下學校人工智慧使用和學習指引》",
     detail:
-      "2026-06-05 核定。依「人工智慧基本法」七項原則，展開校長／教師／學生／家長四個角色，形成 4×7 的完整矩陣。回答的是「可以做什麼、不可以做什麼」。",
+      "2026 年 6 月 5 日核定。依《人工智慧基本法》的七項原則，分別寫給校長、老師、學生和家長。它回答的是：哪些事可以做，哪些不行。",
     tone: "cream" as const,
   },
   {
     order: "02",
     label: "能力基準",
-    short: "標示等級：該具備什麼能力、到什麼程度",
+    short: "老師和學生要會到什麼程度",
     title: "UNESCO AI CFT（教師）／ AI CFS（學生）",
     detail:
-      "教師版 5 面向 × 3 層級（Acquire／Deepen／Create）＝ 15 個能力區塊；學生版 4 面向 × 3 等級。回答的是「教師與學生該具備什麼能力、到什麼程度」。",
+      "教師版有 5 個面向，每個面向分 3 個層次（Acquire／Deepen／Create），共 15 格；學生版是 4 個面向、3 個等級。它回答的是：老師和學生要會到什麼程度。",
     tone: "cream" as const,
   },
   {
     order: "03",
     label: "操作方法論",
-    short: "補上動作：每次跟 AI 互動要做的四件事",
+    short: "每次用 AI，要做的四件事",
     title: "4D 框架：委託・描述・辨識・盡責",
     detail:
-      "本教材主體。把上面兩層的原則與能力，翻譯成每一次 AI 互動實際要走過的四個檢核動作。回答的是「具體怎麼做」。",
+      "這個網站的主角。上面兩層談原則和能力，這一層談的是每次打開 AI 時，實際要做哪四件事。",
     tone: "coral" as const,
   },
   {
     order: "04",
     label: "學科落地",
-    short: "放進課堂：在我這一堂課長什麼樣子",
+    short: "放進你自己的那堂課",
     title: "學科活動 × tw-edu Skills × 108 課綱教案",
     detail:
-      "既有的 31 個跨學科 AI 活動、差異化與命題工具、108 課綱教案設計五步驟。回答的是「在我這一堂課長什麼樣子」。",
+      "包含現有的 31 個跨學科 AI 活動、差異化和命題工具，以及 108 課綱教案的五個設計步驟。它回答的是：放進我的課堂，實際會是什麼樣子。",
     tone: "cream" as const,
   },
 ];
@@ -103,36 +103,36 @@ export const fourD = [
   {
     zh: "委託",
     en: "Delegation",
-    question: "這個任務該不該交給 AI、交多少？",
+    question: "這件事要不要交給 AI？交多少？",
     detail:
-      "先確認問題本身、平台能力邊界，再決定委派範圍。委派愈多，事後的檢核就要愈嚴——這是與「盡責」互為一體的判斷。",
+      "先想清楚問題本身，也弄清楚這個工具做得到什麼，再決定交出去多少。交給 AI 的越多，事後就要檢查得越仔細，所以這一步和「盡責」要一起考慮。",
     moe: "對應教育部原則：人類自主",
     unesco: "UNESCO CFT：Human-centred mindset（Acquire）",
   },
   {
     zh: "描述",
     en: "Description",
-    question: "我會怎麼說明任務、對象與限制？",
+    question: "我要怎麼跟 AI 說清楚？",
     detail:
-      "把任務、脈絡、限制、成功標準講清楚。AI 產出的品質幾乎完全取決於這一步——而要求愈具體，反映的是你自己對任務的理解愈深。",
+      "要做什麼、給誰看、有哪些限制、怎樣才算做好，一項一項講明白。AI 給的東西好不好，大半取決於這一步。能把要求寫得具體，通常也表示你自己把這件事想透了。",
     moe: "對應教育部原則：正確使用、透明與可解釋",
     unesco: "UNESCO CFT：AI foundations and applications（Acquire→Deepen）",
   },
   {
     zh: "辨識",
     en: "Discernment",
-    question: "產出裡，我要特別檢查哪裡？",
+    question: "拿到結果，我要特別看哪裡？",
     detail:
-      "批判性檢視 AI 的內容、過程與行為，不照單全收。辨識出問題後回頭修正描述，是最常用的除錯路徑。",
+      "別照單全收。內容對不對、它怎麼得出這個答案，都要看一看。發現問題就回頭把說明改清楚，這是最常用的修正方法。",
     moe: "對應教育部原則：人工智慧倫理、公平與不歧視",
     unesco: "UNESCO CFT：Ethics of AI（Deepen）",
   },
   {
     zh: "盡責",
     en: "Diligence",
-    question: "最後誰負責？怎麼揭露？",
+    question: "最後誰負責？要怎麼說明用了 AI？",
     detail:
-      "對產出的內容、使用的過程、最後的發布或繳交三個階段都負起最終責任，包含標註 AI 的使用方式與版本。",
+      "從內容、使用過程，一直到最後公開或繳交，責任都在自己身上。也要寫清楚哪裡用了 AI、用的是哪個版本。",
     moe: "對應教育部原則：問責",
     unesco: "UNESCO CFT：Human-centred mindset（Deepen）",
   },
@@ -142,12 +142,12 @@ export const loops = [
   {
     title: "委託 ↔ 盡責",
     subtitle: "Delegation ↔ Diligence",
-    detail: "決定委派多少，跟事後要負多少責任是一體兩面。委派範圍愈大，盡責的檢核標準就要愈高。",
+    detail: "交給 AI 的越多，事後要負的責任就越大，檢查也要跟著更仔細。",
   },
   {
     title: "描述 ↔ 辨識",
     subtitle: "Description ↔ Discernment",
-    detail: "描述得愈清楚，愈容易辨識輸出哪裡走偏；辨識出問題後回頭修正描述，形成最常用的迭代迴圈。",
+    detail: "話說得越清楚，越容易看出結果哪裡歪掉；看出問題，再回頭把話說清楚。大多數時候，我們就在這兩步之間來回。",
   },
 ];
 
@@ -165,9 +165,9 @@ export const mechanisms = [
         { label: "古文確切出處", pos: 0.85 },
       ],
     },
-    plain: "AI 是一個字一個字接龍接出來的，不是先想好答案再打字。",
-    myth: "AI 講的都是查證過的事實。",
-    reality: "AI 只是在接續「聽起來最合理」的下一個字，容易在冷門或需要精確細節的地方編造。",
+    plain: "AI 回答時是一個字接一個字往下寫，並沒有先想好整個答案。",
+    myth: "AI 說的都查證過。",
+    reality: "它只是一直挑「接下來最可能出現」的字。遇到冷門或講究細節的問題，就很容易編出看似合理的內容。",
     prompt: "請 AI 幫你找一句古文的確切出處，你會怎麼查證？",
   },
   {
@@ -183,9 +183,9 @@ export const mechanisms = [
         { label: "本校行事曆", pos: 0.95 },
       ],
     },
-    plain: "AI 懂多少，跟那件事在訓練資料裡有沒有「常出現」有關。",
-    myth: "AI 什麼都知道，而且是最新的。",
-    reality: "AI 有知識截止日期。冷門、小眾、在地的內容（例如台灣特定法規、校內規定）容易錯或過時。",
+    plain: "AI 知道多少，要看這件事在它讀過的資料裡常不常出現。",
+    myth: "AI 什麼都知道，而且都是最新的。",
+    reality: "AI 的知識停在某個時間點。冷門、小眾或很在地的事，像台灣的特定法規或學校自己的規定，很容易答錯或過時。",
     prompt: "問 AI 學校今年的行事曆，為什麼答案不可靠？",
   },
   {
@@ -201,9 +201,9 @@ export const mechanisms = [
         { label: "整本課本的中段細節", pos: 0.9 },
       ],
     },
-    plain: "AI 只記得「這次對話框裡」的內容，換一個新對話就忘光。",
+    plain: "AI 只記得這次對話裡的內容，開一個新對話，之前說過的它就不記得了。",
     myth: "AI 記得我們之前聊過的所有事。",
-    reality: "脈絡視窗是硬限制，太長的文件中間段落容易被忽略。",
+    reality: "一次對話能放的內容有上限。文件太長時，中間的段落特別容易被忽略。",
     prompt: "為什麼把一整本課本貼給 AI，它還是會漏看中間的重點？",
   },
   {
@@ -219,9 +219,9 @@ export const mechanisms = [
         { label: "寫得有創意一點", pos: 0.9 },
       ],
     },
-    plain: "指令愈具體、愈能驗證，AI 愈聽話；愈模糊，AI 愈容易自由發揮。",
-    myth: "只要講清楚要求，AI 一定會完全照做。",
-    reality: "短而可驗證的指令（「用表格呈現」「限 100 字」）服從度高；抽象指令（「寫得有創意一點」）服從度低。",
+    plain: "要求越具體、越容易檢查，AI 越照做；說得越模糊，它越會自己發揮。",
+    myth: "只要把要求講清楚，AI 就一定會照做。",
+    reality: "「用表格呈現」「不超過 100 字」這類容易檢查的要求，AI 大多做得到；「寫得有創意一點」這種說法，它就很難抓到你要的樣子。",
     prompt: "同樣要 AI 寫作文，怎麼下指令才能符合你要的字數與格式？",
   },
 ];
@@ -230,26 +230,26 @@ export const gradeBands = [
   {
     band: "國小高年級",
     emphasis: { delegation: 1, description: 1, discernment: 3, diligence: 1 },
-    focus: "辨識為主，委託淺嘗",
+    focus: "以辨識為主，委託稍微碰一下",
     form: "「AI 說錯了什麼」抓錯遊戲",
-    example: "給一份含錯誤的 AI 解法，讓學生找錯並說明理由。",
-    curriculum: "能辨識資訊正確性，養成查證習慣",
+    example: "給學生一份藏了錯的 AI 解題，請他們找出錯在哪裡，並說出理由。",
+    curriculum: "會判斷資訊對不對，養成查證的習慣",
   },
   {
     band: "國中",
     emphasis: { delegation: 1, description: 3, discernment: 3, diligence: 1 },
-    focus: "描述＋辨識循環",
-    form: "結構化提示詞練習＋同儕互評",
-    example: "把模糊任務（「幫我寫報告」）改寫成具體提示詞，再讓同學互評兩種產出的差異。",
-    curriculum: "能有效描述任務、判斷資訊可信度與偏誤",
+    focus: "描述和辨識輪流練",
+    form: "練習寫提示詞，再和同學互評",
+    example: "先把「幫我寫報告」這種模糊的要求改寫成具體的提示詞，再請同學比較兩次結果差在哪裡。",
+    curriculum: "能把任務說清楚，也能判斷資訊可不可信、有沒有偏誤",
   },
   {
     band: "高中",
     emphasis: { delegation: 2, description: 2, discernment: 2, diligence: 3 },
-    focus: "四項全面，強調盡責",
+    focus: "四項都練，特別要求盡責",
     form: "個人 AI 協作日誌",
-    example: "在作業或學習歷程檔案附上協作日誌：委託了什麼、AI 給了什麼、哪裡被修正。",
-    curriculum: "能負責任地使用科技媒體，並說明使用歷程",
+    example: "在作業或學習歷程檔案後面附一份協作日誌：請 AI 做了什麼、它給了什麼、自己又改了哪裡。",
+    curriculum: "能負責任地使用科技，也說得出自己是怎麼用的",
   },
 ];
 
@@ -258,38 +258,38 @@ export const assessments = [
     type: "結果導向",
     stage: "作業完成後",
     en: "Outcome-based",
-    detail: "檢視最終作品是否符合學習目標，並要求揭露 AI 用在哪個階段。",
+    detail: "看最後的作品有沒有達到學習目標，也請學生說明 AI 用在哪個步驟。",
   },
   {
     type: "過程導向",
     stage: "作業進行中",
     en: "Process-based",
-    detail: "要求繳交「AI 協作日誌」：委託了什麼、AI 給了什麼、哪裡被修正。",
+    detail: "請學生交一份 AI 協作日誌：請 AI 做了什麼、它給了什麼、自己改了哪裡。",
   },
   {
     type: "反思導向",
     stage: "作業繳交時",
     en: "Reflection-based",
-    detail: "學習單加入一欄「這次用 AI，我學到什麼／沒學到什麼」。",
+    detail: "在學習單加一欄：「這次用了 AI，我學到什麼？又有什麼沒學到？」",
   },
 ];
 
 export const studentLocalization = [
   {
     origin: "AI 輔助履歷／CV 撰寫",
-    local: "AI 輔助整理學習歷程檔案的反思段落草稿，但需學生本人改寫成自己的語氣",
+    local: "請 AI 幫忙整理學習歷程反思的草稿，再由學生改寫成自己的話",
   },
   {
     origin: "AI 模擬面試練習",
-    local: "AI 模擬升學面試／口試問答，練習臨場應答邏輯",
+    local: "請 AI 扮演面試官，練習升學面試和口試的臨場回答",
   },
   {
     origin: "個人 AI 協作政策",
-    local: "簡化成一張「我的 AI 使用自我檢核卡」：這次作業，我請 AI 做了什麼？我自己做了什麼？",
+    local: "做一張「我的 AI 使用檢核卡」：這份作業，我請 AI 做了什麼？哪些是我自己做的？",
   },
   {
     origin: "Being the human in the loop",
-    local: "對應教育部指引學生篇：不應只是複製貼上系統產出，要為最終決定負責",
+    local: "教育部指引的學生篇也這樣提醒：不要直接複製貼上，最後的決定要自己負責",
   },
 ];
 
@@ -304,22 +304,22 @@ export const sources = [
       },
       {
         label: "AI Capabilities and Limitations",
-        note: "「能力與限制」四機制與 myth／reality 對照",
+        note: "「能力與限制」的四個機制，以及常見誤解和實際情況的對照",
         href: "https://academy.claude.com/courses/ai-capabilities-and-limitations",
       },
       {
         label: "AI Fluency for pK–12 Educators",
-        note: "分年段情境設計概念（Anthropic × Teach For America）",
+        note: "不同年級的情境設計（Anthropic 與 Teach For America 合作）",
         href: "https://academy.claude.com/courses/ai-fluency-for-k-12-educators",
       },
       {
         label: "Teaching AI Fluency",
-        note: "三種評量策略（原為高教取向，本站已在地化改寫）",
+        note: "三種評量方式（原本寫給大學，本站改寫成中小學版本）",
         href: "https://academy.claude.com/courses/teaching-ai-fluency",
       },
       {
         label: "AI Fluency for students",
-        note: "學生素養篇（原為大學生涯取向，本站改寫為 K-12 升學情境）",
+        note: "學生篇（原本談大學生求職，本站改寫成中小學升學情境）",
         href: "https://academy.claude.com/courses/ai-fluency-for-students",
       },
     ],
@@ -348,18 +348,18 @@ export const sources = [
     items: [
       {
         label: "AI 素養教育課程模組設計指南",
-        note: "本站內容的來源文件，收錄於作者個人知識庫（LLM Wiki），2026-09-13 整編",
+        note: "本站內容的底稿，放在作者的個人知識庫（LLM Wiki），2026-09-13 整理",
       },
       {
         label: "教師 AI 活動指南（Med Kharbach, 2026）",
-        note: "學科活動示例與台灣適配筆記的參考來源",
+        note: "學科活動範例，以及改寫成台灣版本時的參考",
       },
     ],
   },
 ];
 
 export const disclaimer =
-  "本站為獨立製作的教學參考資源，非 Anthropic 官方產品，亦未獲 Anthropic、UNESCO 或教育部背書。視覺語彙參考公開的 Claude 設計語言，內容整編自上列公開課程與官方文件，並依台灣 K-12 教育現場改寫。";
+  "這是個人製作的教學參考網站，不是 Anthropic 的官方產品，也沒有得到 Anthropic、UNESCO 或教育部的背書。版面參考了 Claude 公開的設計風格，內容整理自上面列出的公開課程和官方文件，再改寫成適合台灣中小學的版本。";
 
 /** 每頁頁首的「本頁重點」三點條。 */
 export const highlights: Record<string, string[]> = {
@@ -374,21 +374,21 @@ export const highlights: Record<string, string[]> = {
 export const collision = {
   task: "把整本課本貼給 AI，請它依本校進度出一份段考題",
   hits: {
-    "next-token": "題目看起來很像，答案卻可能是編的",
-    "knowledge-cutoff": "不知道本校進度與命題慣例",
-    "context-window": "課本中段的內容被稀釋",
-    steerability: "「出一份好題目」沒有可驗證的標準",
+    "next-token": "題目看起來像樣，答案卻可能是編的",
+    "knowledge-cutoff": "它不知道你們學校的進度和出題習慣",
+    "context-window": "課本中間的內容容易被略過",
+    steerability: "「出一份好題目」沒辦法檢查有沒有做到",
   },
-  fix: "拆小段落、附上進度表、寫明題型與配分，最後自己逐題核對。",
+  fix: "把課本拆成小段、附上進度表、寫清楚題型和配分，最後自己一題一題核對。",
 };
 
 /** 提示詞七段結構的作用說明（/prompts 頁首的解剖圖）。 */
 export const promptAnatomy = [
-  { part: "角色", role: "設定 Claude 以誰的專業來回答", fluency: "描述" },
-  { part: "任務", role: "要完成的具體產出", fluency: "委託" },
-  { part: "脈絡", role: "年級、科目、你提供的素材", fluency: "描述" },
-  { part: "必要時先問問題", role: "資訊不足時先問，不要亂猜", fluency: "辨識" },
-  { part: "限制", role: "不能做什麼、要遵守什麼", fluency: "描述" },
-  { part: "輸出格式", role: "表格、條列、字數", fluency: "描述" },
-  { part: "成功標準", role: "怎樣才算做對——你事後核對的依據", fluency: "辨識" },
+  { part: "角色", role: "請 Claude 用哪種專業身分回答", fluency: "描述" },
+  { part: "任務", role: "你要它交出什麼", fluency: "委託" },
+  { part: "脈絡", role: "年級、科目，還有你給的材料", fluency: "描述" },
+  { part: "必要時先問問題", role: "資料不夠就先問你，不要自己亂猜", fluency: "辨識" },
+  { part: "限制", role: "哪些不能做、哪些一定要遵守", fluency: "描述" },
+  { part: "輸出格式", role: "要表格、條列，還是限定字數", fluency: "描述" },
+  { part: "成功標準", role: "怎樣才算做對，也是你事後核對的清單", fluency: "辨識" },
 ];

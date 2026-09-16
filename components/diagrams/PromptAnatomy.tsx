@@ -37,8 +37,8 @@ export function PromptAnatomy({
       ))}
       <li className="flex items-center rounded-lg border border-dashed border-hairline p-4 sm:col-span-2 lg:col-span-1">
         <p className="body-sm text-body">
-          最後一段「成功標準」是你收到回覆後<strong className="font-medium text-ink">拿來核對的清單</strong>
-          ——這正是「辨識」在提示詞裡的位置。
+          最後一段「成功標準」，是你收到回覆後<strong className="font-medium text-ink">用來核對的清單</strong>，
+          也就是「辨識」在提示詞裡的位置。
         </p>
       </li>
     </ol>

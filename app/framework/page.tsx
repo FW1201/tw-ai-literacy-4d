@@ -8,7 +8,7 @@ import { fourD, highlights, loops } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "4D 框架｜AI 素養教育 4D 框架",
-  description: "委託・描述・辨識・盡責——四個動作、兩組循環，以及它們對應到教育部原則與 UNESCO 能力的哪一格。",
+  description: "委託、描述、辨識、盡責這四個動作和兩組循環，以及它們對應到教育部原則與 UNESCO 能力的哪裡。",
 };
 
 /** 第一句當摘要，其餘收進延伸說明。 */
@@ -25,7 +25,7 @@ export default function FrameworkPage() {
         index="01"
         eyebrow="4D 框架"
         title="四個動作"
-        lead="委託、描述、辨識、盡責——問完這四題，一輪 AI 協作才算做完。"
+        lead="委託、描述、辨識、盡責。每次用 AI，把這四個問題想過一遍，事情才算做完整。"
         highlights={highlights["/framework"]}
       />
 
@@ -34,7 +34,7 @@ export default function FrameworkPage() {
           {fourD.map((d, i) => {
             const { first, rest } = splitFirst(d.detail);
             return (
-              <li key={d.en} className="reveal lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
+              <li key={d.en} className="lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
                 <div className="flex items-baseline justify-between">
                   <h2 className="display-md">{d.zh}</h2>
                   <span className="font-display lining-nums text-2xl text-primary">
@@ -64,7 +64,7 @@ export default function FrameworkPage() {
             onDark
             eyebrow="動畫"
             title="兩組循環"
-            lead="可暫停、可拖曳，適合直接投影。"
+            lead="可以暫停、拖曳進度，上課直接投影就能用。"
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-start">
             <ConceptPlayer id="four-d-loops" />
@@ -72,7 +72,7 @@ export default function FrameworkPage() {
               {loops.map((loop, i) => (
                 <div key={loop.title} className="rounded-lg bg-surface-dark-soft p-6">
                   <dt className="flex items-baseline gap-3">
-                    <span className="caption-upper text-primary">{i === 0 ? "策略問責" : "戰術迭代"}</span>
+                    <span className="caption-upper text-primary">{i === 0 ? "要不要用、誰負責" : "怎麼說、怎麼看"}</span>
                   </dt>
                   <dd className="mt-2">
                     <p className="title-lg text-on-dark">{loop.title}</p>
@@ -89,7 +89,7 @@ export default function FrameworkPage() {
         <Heading
           eyebrow="對照"
           title="原則與能力"
-          lead="4D 不是新規範，是把既有原則落到動作上。"
+          lead="4D 沒有另訂新規則，只是把現有的原則變成具體做得到的事。"
         />
         <div className="mt-10">
           <Figure

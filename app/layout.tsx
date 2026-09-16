@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ViewTransition } from "react";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -20,7 +19,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-Hant-TW">
+    <html lang="zh-Hant-TW" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -35,8 +34,7 @@ export default function RootLayout({
         </a>
         <Nav />
         <main id="main" tabIndex={-1} className="outline-none">
-          {/* 換頁時只有內容區淡入（樣式見 globals.css 的 .page） */}
-          <ViewTransition default="page">{children}</ViewTransition>
+          {children}
         </main>
         <Footer />
       </body>

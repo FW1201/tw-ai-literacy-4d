@@ -5,11 +5,11 @@ import { LayerStack } from "@/components/diagrams/LayerStack";
 import { entries, fourLayers, hero } from "@/lib/content";
 
 const AUDIENCE: Record<string, string> = {
-  "/framework": "第一次接觸 4D 的老師",
-  "/how-ai-works": "想向學生解釋 AI 的老師",
-  "/classroom": "準備設計課程的老師",
-  "/prompts": "明天就要用 Claude 的老師",
-  "/sources": "需要查證與引用的人",
+  "/framework": "第一次認識 4D 的老師",
+  "/how-ai-works": "想跟學生說明 AI 的老師",
+  "/classroom": "正在設計課程的老師",
+  "/prompts": "明天上課就想用 Claude 的老師",
+  "/sources": "需要查出處、引用資料的人",
 };
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ function Hero() {
           <span className="badge-pill">{hero.eyebrow}</span>
           <h1 className="display-xl mt-6 whitespace-pre-line">{hero.headline}</h1>
           <p className="body-md measure mt-6 text-body-strong">
-            教育部劃出紅線，UNESCO 標示等級，但沒人告訴老師跟 AI 互動時具體要做哪幾件事。這份教材補上這一層。
+            {hero.lead}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/framework" className="btn btn-primary">
@@ -55,9 +55,9 @@ function Positioning() {
           <Heading
             eyebrow="定位"
             title="補上中間那一層"
-            lead="上兩層回答「可不可以」與「要多厲害」，4D 把它們翻成課堂裡的動作。"
+            lead="前兩層告訴你能不能做、要做到多好；4D 談的是每次實際用 AI 時，你要做哪些事。"
           />
-          <p className="caption mt-6 text-muted">點開任一層看完整說明</p>
+          <p className="caption mt-6 text-muted">點一下，可以看完整說明</p>
         </div>
         <LayerStack layers={fourLayers} />
       </div>
@@ -74,7 +74,7 @@ function Entries() {
           <Link
             key={entry.href}
             href={entry.href}
-            className="reveal lift group flex flex-col rounded-lg border border-hairline bg-canvas p-7"
+            className="lift group flex flex-col rounded-lg border border-hairline bg-canvas p-7"
           >
             <div className="flex items-baseline justify-between gap-3">
               <span className="font-display lining-nums text-3xl leading-none text-primary-ink">

@@ -9,7 +9,7 @@ import { collision, highlights, mechanisms } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "AI 怎麼運作｜AI 素養教育 4D 框架",
-  description: "接龍式生成、知識截止、工作記憶、可控性——四個機制的白話版，各配一支可直接投影的概念動畫。",
+  description: "用白話說明 AI 的四個運作方式：接龍式生成、知識、工作記憶、可控性，每一個都附一支可以投影的動畫。",
 };
 
 export default function HowAiWorksPage() {
@@ -19,7 +19,7 @@ export default function HowAiWorksPage() {
         index="02"
         eyebrow="AI 怎麼運作"
         title="為什麼會講錯"
-        lead="先懂四個機制，才看得出哪裡不對。看圖和動畫就好，不必背英文。"
+        lead="先弄懂 AI 是怎麼運作的，才看得出它哪裡出錯。看圖和動畫就好，英文名詞不用背。"
         highlights={highlights["/how-ai-works"]}
       />
 
@@ -30,7 +30,7 @@ export default function HowAiWorksPage() {
           className={`scroll-mt-20 py-14 sm:py-20 ${i % 2 === 0 ? "bg-surface-dark" : "bg-surface-dark-soft"}`}
         >
           <div className="shell grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
-            <div className="reveal">
+            <div>
               <p className="caption-upper text-primary">機制 {String(i + 1).padStart(2, "0")}</p>
               <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h2 className="display-md text-on-dark">{m.name}</h2>
@@ -64,7 +64,7 @@ export default function HowAiWorksPage() {
               </div>
             </div>
 
-            <div className="lg:sticky lg:top-24">
+            <div>
               <ConceptPlayer id={m.anim} />
             </div>
           </div>
@@ -73,9 +73,9 @@ export default function HowAiWorksPage() {
 
       <Band tone="soft">
         <Heading
-          eyebrow="綜合"
-          title="同時發生"
-          lead="輸出怪怪的，先認出是哪幾個機制相撞，再對症下藥。"
+          eyebrow="放在一起看"
+          title="常常一起出現"
+          lead="結果怪怪的時候，先想想是哪幾個原因同時出現，再決定怎麼修。"
         />
         <div className="mt-10">
           <Venn4

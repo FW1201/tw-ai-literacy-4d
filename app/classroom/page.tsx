@@ -14,7 +14,7 @@ import { CASES, MODE_LABEL, TRACK_LABEL } from "@/lib/cases";
 
 export const metadata: Metadata = {
   title: "課堂實踐｜AI 素養教育 4D 框架",
-  description: "分年段設計原則、三種評量策略、實際可照做的教學案例，以及學生素養篇的在地化對照。",
+  description: "不同年級怎麼教、作業怎麼評、16 個可以照著做的案例，以及改寫成台灣升學情境的學生篇。",
 };
 
 const STAGE_ORDER = ["作業進行中", "作業繳交時", "作業完成後"];
@@ -29,7 +29,7 @@ export default function ClassroomPage() {
         index="03"
         eyebrow="課堂實踐"
         title="帶進課堂"
-        lead="學段側重、評量時機、實作案例，以及學生版的在地化。"
+        lead="不同年級要多練什麼、作業什麼時候評，再加上可以照著做的案例。"
         highlights={highlights["/classroom"]}
       />
       <SectionNav
@@ -45,16 +45,16 @@ export default function ClassroomPage() {
         <Heading
           eyebrow="分年段"
           title="學段側重"
-          lead="依 108 課綱三學段與核心素養 B2 編排。"
+          lead="依照 108 課綱的三個學習階段和核心素養 B2 安排。"
         />
         <div className="mt-10">
-          <Figure caption="國小先練「看出錯」，國中練「說清楚、再檢查」，高中把「負責與揭露」變成習慣。">
+          <Figure caption="國小先練習看出錯誤；國中練習把話說清楚、再自己檢查；到了高中，要養成負責、主動說明的習慣。">
             <EmphasisHeatmap rows={gradeBands} />
           </Figure>
         </div>
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           {gradeBands.map((g) => (
-            <article key={g.band} className="reveal lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
+            <article key={g.band} className="lift flex flex-col rounded-lg border border-transparent bg-canvas p-6">
               <h3 className="title-lg">{g.band}</h3>
               <p className="caption mt-1 text-primary-ink">{g.focus}</p>
               <p className="title-sm mt-5">{g.form}</p>
@@ -71,7 +71,7 @@ export default function ClassroomPage() {
         <Heading
           eyebrow="評量"
           title="評量時機"
-          lead="三種策略，各守作業的一個時間點。"
+          lead="三種評量方式，各自放在作業的不同階段。"
         />
         <div className="mt-10 rounded-lg border border-hairline p-6 sm:p-8">
           <Stepper
@@ -89,12 +89,12 @@ export default function ClassroomPage() {
         <Heading
           eyebrow="學生素養"
           title="在地化改寫"
-          lead="原課程寫給大學生，這裡改成國高中生的升學情境。"
+          lead="原本的課程是寫給大學生的，這裡改成國高中生會遇到的升學情境。"
         />
         <ul className="mt-10 space-y-4">
           {studentLocalization.map((row) => (
             <li key={row.origin}>
-              <Compare fromLabel="原課程情境" toLabel="台灣 K-12 在地化" from={row.origin} to={row.local} />
+              <Compare fromLabel="原課程情境" toLabel="改寫成台灣版" from={row.origin} to={row.local} />
             </li>
           ))}
         </ul>
@@ -115,7 +115,7 @@ function Cases() {
         <Heading
           eyebrow="實踐案例"
           title={`${CASES.length} 個案例`}
-          lead="選一個類別，照步驟做；附提示詞的可直接複製。"
+          lead="先選一個類別，照著步驟做就好；有附提示詞的可以直接複製。"
         />
 
         <div className="mt-8">

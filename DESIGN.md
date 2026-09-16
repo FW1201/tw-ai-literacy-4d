@@ -626,8 +626,8 @@ When photography is used (rare — mostly testimonials), avatars crop to perfect
 
 ### Motion — 流暢度
 
-- 換頁：React `<ViewTransition>` 淡入並上移 8px（240ms），導覽列與頁尾不參與
-- 區塊進場：`.reveal` 以 CSS scroll-driven animation 淡入上移，不支援的瀏覽器直接顯示
+- 換頁：`app/template.tsx` 讓內容區淡入並上移 8px（320ms），導覽列與頁尾不參與；`<html data-scroll-behavior="smooth">` 讓換頁時直接回到頂端，不走平滑捲動
+- 不做綁定捲動位置的進場動畫，也不讓動畫區塊黏著畫面：捲動時內容不應自己移動
 - 導覽列：捲動後出現細陰影；目前頁面以珊瑚底線標示
 - 卡片 hover：上移 2px ＋ 柔和陰影，統一 `--ease-out` 200ms
 - `prefers-reduced-motion: reduce` 時上述動效全部關閉

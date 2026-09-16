@@ -27,7 +27,7 @@ const fluencyCounts = Object.fromEntries(
 
 export const metadata: Metadata = {
   title: "提示詞庫｜AI 素養教育 4D 框架",
-  description: "60 筆可直接複製使用的 Claude 教學提示詞，依使用情境與 4D 環節分類。",
+  description: "60 筆可以直接複製的 Claude 教學提示詞，能依使用情境和 4D 動作篩選。",
 };
 
 export default function PromptsPage() {
@@ -37,7 +37,7 @@ export default function PromptsPage() {
         index="04"
         eyebrow="提示詞庫"
         title={`${PROMPTS.length} 筆提示詞`}
-        lead="複製、換掉方括號裡的年級與主題，就能貼進 Claude。"
+        lead="複製下來，把方括號裡的年級和主題換成你的，就能貼進 Claude。"
         highlights={highlights["/prompts"]}
       />
 
@@ -45,7 +45,7 @@ export default function PromptsPage() {
         <Heading
           eyebrow="結構"
           title="七段組成"
-          lead="知道每段的作用，改寫時就知道動哪裡。"
+          lead="知道每一段在做什麼，要修改時就知道從哪裡下手。"
         />
         <div className="mt-10">
           <Figure>
@@ -124,7 +124,7 @@ export default function PromptsPage() {
 
         <div className="shell mt-12">
           <p className="body-sm measure text-muted">
-            原始素材出自作者自製的 Gemini EDU Prompt Assistant 瀏覽器擴充，後在 Claude 教育應用手冊專案中改寫為七段式模板；本站收錄教學相關四類，研究查核與 Artifacts／Claude Code 兩類未收錄。
+            這批提示詞最早來自我做的 Gemini EDU Prompt Assistant 瀏覽器擴充功能，後來在 Claude 教育應用手冊裡改寫成七段式。這裡只放和教學有關的四類，研究查核與 Artifacts／Claude Code 兩類沒有收進來。
           </p>
         </div>
       </section>

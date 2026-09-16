@@ -7,7 +7,7 @@ const COLS = [
 
 type Key = (typeof COLS)[number]["key"];
 
-const LEVEL_LABEL = ["", "淺嘗", "兼顧", "主軸"];
+const LEVEL_LABEL = ["", "稍微碰", "有練到", "重點"];
 // 以 primary 的不透明度表示側重程度；3 級改實色＋白字確保對比
 const LEVEL_CLS = [
   "",
@@ -54,7 +54,7 @@ export function EmphasisHeatmap({
           ))}
         </tbody>
       </table>
-      <p className="caption mt-3 text-muted">顏色愈深＝該學段愈需要刻意練習這個環節</p>
+      <p className="caption mt-3 text-muted">顏色越深，代表這個學段越需要多練這個動作</p>
     </div>
   );
 }

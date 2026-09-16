@@ -2,7 +2,7 @@ const pairs = [
   {
     top: { zh: "委託", en: "Delegation" },
     bottom: { zh: "盡責", en: "Diligence" },
-    caption: "委派多少 ↔ 負多少責",
+    caption: "交出多少 ↔ 負責多少",
   },
   {
     top: { zh: "描述", en: "Description" },
@@ -41,7 +41,7 @@ export function LoopDiagram() {
       </div>
 
       <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-relaxed text-on-dark-soft">
-        四個能力不是線性步驟。委派愈多，盡責的檢核就要愈嚴；描述得愈清楚，愈容易辨識輸出哪裡走偏。
+        這四件事不必照順序做。交給 AI 的越多，事後就要檢查得越仔細；話說得越清楚，越容易看出結果哪裡不對。
       </p>
     </div>
   );

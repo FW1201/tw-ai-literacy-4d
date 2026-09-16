@@ -35,7 +35,7 @@ export function Heading({
   onDark?: boolean;
 }) {
   return (
-    <div className="reveal max-w-3xl">
+    <div className="max-w-3xl">
       <span className={`caption-upper ${onDark ? "text-primary" : "text-primary-ink"}`}>{eyebrow}</span>
       <h2 className={`display-lg mt-4 ${onDark ? "text-on-dark" : ""}`}>{title}</h2>
       {lead && (
