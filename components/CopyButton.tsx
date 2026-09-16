@@ -12,7 +12,7 @@ const LABEL: Record<State, string> = {
 };
 
 /**
- * 從同一張卡片裡的 <pre data-prompt-body> 讀取文字複製。
+ * 從同一張卡片裡的隱藏原文 <pre data-prompt-body>（見 PromptBody）讀取文字複製。
  * 文字留在 DOM、不進 JS bundle，這個元件本身只有幾行。
  */
 export function CopyButton() {
@@ -21,7 +21,6 @@ export function CopyButton() {
 
   async function copy() {
     const card = ref.current?.closest("[data-prompt-card]");
-    const details = card?.querySelector("details");
     const body = card?.querySelector<HTMLElement>("[data-prompt-body]");
     if (!body?.textContent) return;
 
@@ -29,8 +28,6 @@ export function CopyButton() {
       await navigator.clipboard.writeText(body.textContent);
       setState("copied");
     } catch {
-      // 展開後再選取，否則使用者看不到被選起來的內容
-      if (details) details.open = true;
       const range = document.createRange();
       range.selectNodeContents(body);
       const sel = window.getSelection();
@@ -46,7 +43,7 @@ export function CopyButton() {
       ref={ref}
       type="button"
       onClick={copy}
-      className="btn btn-secondary shrink-0"
+      className="btn btn-secondary h-9 shrink-0 px-3.5 text-[13px]"
       aria-live="polite"
     >
       {LABEL[state]}

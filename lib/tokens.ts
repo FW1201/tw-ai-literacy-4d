@@ -17,12 +17,14 @@ export const T = {
 
   primary: "#cc785c",
   primaryActive: "#a9583e",
+  primaryInk: "#9c4f36",
+  primaryStrong: "#a9583e",
   accentTeal: "#5db8a6",
   accentAmber: "#e8a55a",
 
   ink: "#141413",
   body: "#3d3d3a",
-  muted: "#6c6a64",
+  muted: "#65625b",
   mutedSoft: "#8e8b82",
   onPrimary: "#ffffff",
   onDark: "#faf9f5",

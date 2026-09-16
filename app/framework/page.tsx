@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-import { Band, PageHeader } from "@/components/Band";
+import { Band, Heading, PageHeader } from "@/components/Band";
 import { ConceptPlayer } from "@/components/ConceptPlayer";
-import { fourD, loops } from "@/lib/content";
+import { PageNav } from "@/components/PageNav";
+import { Figure } from "@/components/diagrams/Figure";
+import { AlignmentMatrix } from "@/components/diagrams/AlignmentMatrix";
+import { fourD, highlights, loops } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "4D 框架｜AI 素養教育 4D 框架",
   description: "委託・描述・辨識・盡責——四個動作、兩組循環，以及它們對應到教育部原則與 UNESCO 能力的哪一格。",
 };
+
+/** 第一句當摘要，其餘收進延伸說明。 */
+function splitFirst(text: string) {
+  const i = text.indexOf("。");
+  if (i < 0 || i === text.length - 1) return { first: text, rest: "" };
+  return { first: text.slice(0, i + 1), rest: text.slice(i + 1) };
+}
 
 export default function FrameworkPage() {
   return (
@@ -14,54 +24,82 @@ export default function FrameworkPage() {
       <PageHeader
         eyebrow="4D 框架"
         title="委託・描述・辨識・盡責"
-        lead="一句話記住：委派多少、講清楚什麼、看得出哪裡不對、最後誰負責——四個問題問完，一輪 AI 協作才算做完。"
+        lead="委派多少、講清楚什麼、看得出哪裡不對、最後誰負責——四個問題問完，一輪 AI 協作才算做完。"
+        highlights={highlights["/framework"]}
       />
 
-      <Band tone="canvas">
-        <div className="grid gap-5 md:grid-cols-2">
-          {fourD.map((d) => (
-            <article key={d.en} className="rounded-lg bg-surface-card p-8">
-              <div className="flex items-baseline gap-3">
-                <h2 className="display-sm">{d.zh}</h2>
-                <span className="caption text-muted">{d.en}</span>
-              </div>
-              <p className="title-sm mt-4 text-body-strong">{d.question}</p>
-              <p className="body-sm mt-3 text-body">{d.detail}</p>
-              <dl className="mt-6 space-y-1.5 border-t border-hairline pt-5">
-                <div className="body-sm text-muted">{d.moe}</div>
-                <div className="body-sm text-muted">{d.unesco}</div>
-              </dl>
-            </article>
-          ))}
-        </div>
+      <Band tone="card">
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {fourD.map((d, i) => {
+            const { first, rest } = splitFirst(d.detail);
+            return (
+              <li key={d.en} className="flex flex-col rounded-lg bg-canvas p-6">
+                <div className="flex items-baseline justify-between">
+                  <h2 className="display-md">{d.zh}</h2>
+                  <span className="font-display lining-nums text-2xl text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <p className="caption text-muted">{d.en}</p>
+                <p className="title-md mt-5 text-ink">{d.question}</p>
+                <p className="body-md mt-2 grow text-body">{first}</p>
+                {rest && (
+                  <details className="mt-4">
+                    <summary className="caption cursor-pointer list-none text-primary-ink marker:content-none">
+                      延伸說明 ▾
+                    </summary>
+                    <p className="body-sm mt-2 text-body">{rest}</p>
+                  </details>
+                )}
+              </li>
+            );
+          })}
+        </ol>
       </Band>
 
       <section className="bg-surface-dark py-16 sm:py-24 lg:py-section">
         <div className="shell">
-          <span className="caption-upper text-primary">概念動畫</span>
-          <h2 className="display-lg mt-4 max-w-3xl text-on-dark">兩組循環實際怎麼轉</h2>
-          <p className="body-md mt-5 max-w-2xl text-on-dark-soft">
-            描述↔辨識是快速來回的戰術迭代，委託↔盡責是框住整件事的策略問責。動畫可暫停、可拉時間軸，適合直接投影講解。
-          </p>
-          <div className="mt-10">
+          <Heading
+            onDark
+            eyebrow="概念動畫"
+            title="兩組循環實際怎麼轉"
+            lead="動畫可暫停、可拉時間軸，適合直接投影講解。"
+          />
+          <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-start">
             <ConceptPlayer id="four-d-loops" />
+            <dl className="space-y-4">
+              {loops.map((loop, i) => (
+                <div key={loop.title} className="rounded-lg bg-surface-dark-soft p-6">
+                  <dt className="flex items-baseline gap-3">
+                    <span className="caption-upper text-primary">{i === 0 ? "策略問責" : "戰術迭代"}</span>
+                  </dt>
+                  <dd className="mt-2">
+                    <p className="title-lg text-on-dark">{loop.title}</p>
+                    <p className="body-md mt-2 text-on-dark-soft">{loop.detail}</p>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
 
       <Band tone="soft">
-        <div className="grid gap-5 md:grid-cols-2">
-          {loops.map((loop) => (
-            <div key={loop.title} className="rounded-lg border border-hairline bg-canvas p-7">
-              <div className="flex items-baseline gap-3">
-                <h3 className="title-md">{loop.title}</h3>
-                <span className="caption text-muted">{loop.subtitle}</span>
-              </div>
-              <p className="body-sm mt-2 text-body">{loop.detail}</p>
-            </div>
-          ))}
+        <Heading
+          eyebrow="對照"
+          title="每個 D，對到哪一條原則、哪一種能力"
+          lead="4D 不是新規範，而是把既有的原則與能力落到動作上。"
+        />
+        <div className="mt-10">
+          <Figure
+            source="教育部《高級中等以下學校人工智慧使用和學習指引》（2026）；UNESCO AI Competency Framework for Teachers（2024）"
+          >
+            <AlignmentMatrix rows={fourD} />
+          </Figure>
         </div>
       </Band>
+
+      <PageNav current="/framework" />
     </>
   );
 }

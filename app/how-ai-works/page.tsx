@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/Band";
+import { Band, Heading, PageHeader } from "@/components/Band";
 import { ConceptPlayer } from "@/components/ConceptPlayer";
-import { mechanisms } from "@/lib/content";
+import { PageNav } from "@/components/PageNav";
+import { Compare } from "@/components/diagrams/Compare";
+import { Spectrum } from "@/components/diagrams/Spectrum";
+import { Venn4 } from "@/components/diagrams/Venn4";
+import { collision, highlights, mechanisms } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "AI 怎麼運作｜AI 素養教育 4D 框架",
@@ -14,52 +18,77 @@ export default function HowAiWorksPage() {
       <PageHeader
         eyebrow="能力與限制"
         title="AI 為什麼會「一本正經地講錯」"
-        lead="這是「辨識」能力的知識基礎——要看得出哪裡不對，得先有一個「它為什麼會這樣」的心智模型。課堂上不必背英文名稱，用動畫與抓錯活動內化即可。"
+        lead="要看得出哪裡不對，先要知道它為什麼會這樣。四個機制不必背英文，看圖和動畫就懂。"
+        highlights={highlights["/how-ai-works"]}
       />
 
       {mechanisms.map((m, i) => (
         <section
           key={m.en}
-          className={i % 2 === 0 ? "bg-surface-dark py-14 sm:py-20" : "bg-surface-dark-soft py-14 sm:py-20"}
+          id={m.anim}
+          className={`scroll-mt-20 py-14 sm:py-20 ${i % 2 === 0 ? "bg-surface-dark" : "bg-surface-dark-soft"}`}
         >
           <div className="shell grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
             <div>
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <p className="caption-upper text-primary">機制 {String(i + 1).padStart(2, "0")}</p>
+              <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h2 className="display-md text-on-dark">{m.name}</h2>
                 <span className="font-mono text-sm text-on-dark-soft">{m.en}</span>
               </div>
-              <p className="body-md mt-4 text-on-dark-soft">{m.plain}</p>
+              <p className="body-md measure mt-3 text-on-dark">{m.plain}</p>
 
-              <div className="mt-7 space-y-3">
-                <div className="rounded-md bg-surface-dark-elevated p-5">
-                  <p className="caption text-accent-amber">常見誤解</p>
-                  <p className="body-sm mt-1.5 text-on-dark">{m.myth}</p>
-                </div>
-                <div className="rounded-md bg-surface-dark-elevated p-5">
-                  <p className="caption text-accent-teal">事實</p>
-                  <p className="body-sm mt-1.5 text-on-dark">{m.reality}</p>
-                </div>
+              <div className="mt-8">
+                <Spectrum {...m.spectrum} />
               </div>
 
-              <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-relaxed text-on-dark-soft">
-                <span className="text-primary">課堂提問 </span>
-                {m.prompt}
-              </p>
+              <div className="mt-6">
+                <Compare
+                  tone="dark"
+                  toColor="teal"
+                  fromLabel="常見誤解"
+                  toLabel="實際上"
+                  from={m.myth}
+                  to={m.reality}
+                />
+              </div>
+
+              <div className="mt-6 flex gap-4 rounded-lg border border-primary/40 p-5">
+                <span aria-hidden="true" className="font-display text-3xl leading-none text-primary">
+                  ?
+                </span>
+                <div>
+                  <p className="caption text-primary">帶進課堂的提問</p>
+                  <p className="title-md mt-1 text-on-dark">{m.prompt}</p>
+                </div>
+              </div>
             </div>
 
-            <ConceptPlayer id={m.anim} />
+            <div className="lg:sticky lg:top-24">
+              <ConceptPlayer id={m.anim} />
+            </div>
           </div>
         </section>
       ))}
 
-      <section className="bg-canvas py-16 sm:py-24">
-        <div className="shell max-w-3xl">
-          <h2 className="display-md">四個機制會同時發生</h2>
-          <p className="body-md mt-5 text-body">
-            真實使用時它們從不單獨出現：一份長文件同時壓到工作記憶，又踩進模型不熟的在地知識；一個模糊指令同時考驗可控性，而接龍機制正伸手去抓「聽起來最合理」的答案。看到非預期的輸出時，先辨認是哪幾個機制在相撞，再對症下藥——這比重新送出一次有用得多。
-          </p>
+      <Band tone="soft">
+        <Heading
+          eyebrow="綜合"
+          title="四個機制，常常同時發生"
+          lead="看到奇怪的輸出，先認出是哪幾個機制在相撞，再對症下藥——比重新送出一次有用得多。"
+        />
+        <div className="mt-10">
+          <Venn4
+            task={collision.task}
+            fix={collision.fix}
+            hits={mechanisms.map((m) => ({
+              name: m.name,
+              text: collision.hits[m.anim],
+            }))}
+          />
         </div>
-      </section>
+      </Band>
+
+      <PageNav current="/how-ai-works" />
     </>
   );
 }

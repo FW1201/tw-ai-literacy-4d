@@ -17,6 +17,10 @@
   /* Brand */
   --color-primary: #cc785c;
   --color-primary-active: #a9583e;
+  /* 無障礙局部偏離（見 DESIGN.md Local overrides）：
+     primary 只用於大色塊與裝飾；小字與小按鈕改用以下兩色才達 WCAG AA */
+  --color-primary-ink: #9c4f36;
+  --color-primary-strong: #a9583e;
   --color-primary-disabled: #e6dfd8;
   --color-accent-teal: #5db8a6;
   --color-accent-amber: #e8a55a;
@@ -25,8 +29,8 @@
   --color-ink: #141413;
   --color-body-strong: #252523;
   --color-body: #3d3d3a;
-  --color-muted: #6c6a64;
-  --color-muted-soft: #8e8b82;
+  --color-muted: #65625b;
+  --color-muted-soft: #8e8b82; /* 僅供分隔線與裝飾，不可當文字色 */
   --color-on-primary: #ffffff;
   --color-on-dark: #faf9f5;
   --color-on-dark-soft: #a09d96;
@@ -73,6 +77,51 @@ body {
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  /* 中文標題優先在標點與空白處斷行，避免把詞拆開；anywhere 是防溢出的安全網 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+p, li, dd, dt {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-strong);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  background: var(--color-ink);
+  color: var(--color-canvas);
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 ::selection {
@@ -150,13 +199,18 @@ body {
   .body-md {
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   .body-sm {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.75;
+  }
+
+  /* 中文舒適行長：16px 時約 40 字 */
+  .measure {
+    max-width: 40em;
   }
 
   .caption {
@@ -189,12 +243,12 @@ body {
   }
 
   .btn-primary {
-    background: var(--color-primary);
+    background: var(--color-primary-strong);
     color: var(--color-on-primary);
   }
   .btn-primary:hover,
   .btn-primary:active {
-    background: var(--color-primary-active);
+    background: var(--color-primary-ink);
   }
 
   .btn-secondary {
@@ -219,12 +273,16 @@ body {
 
   /* Inline coral link — one of the system's signature small details */
   .text-link {
-    color: var(--color-primary);
+    color: var(--color-primary-ink);
     text-decoration: none;
     border-bottom: 1px solid transparent;
   }
   .text-link:hover {
-    border-bottom-color: var(--color-primary);
+    border-bottom-color: var(--color-primary-ink);
+  }
+  /* 深色底上的連結維持原珊瑚（深色底對比 5.47） */
+  .text-link-on-dark {
+    color: var(--color-primary);
   }
 
   .badge-pill {
@@ -242,13 +300,12 @@ body {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
-    background: var(--color-primary);
+    background: var(--color-primary-strong);
     color: var(--color-on-primary);
     padding: 4px 12px;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   .shell {

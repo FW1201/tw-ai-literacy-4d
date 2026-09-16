@@ -29,8 +29,13 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a href="#main" className="skip-link">
+          跳到主要內容
+        </a>
         <Nav />
-        <main>{children}</main>
+        <main id="main" tabIndex={-1} className="outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

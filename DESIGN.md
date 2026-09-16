@@ -587,3 +587,35 @@ When photography is used (rare — mostly testimonials), avatars crop to perfect
 - Form validation states beyond `{component.text-input-focused}` are not extracted — error / success states would need a sign-up or feedback flow to confirm.
 - The actual Claude product surface (claude.ai chat interface) shares some tokens with the marketing site but adds many product-specific components (chat bubbles, message tools, file upload chips, conversation history sidebar) that are out of scope for this marketing-surface document.
 - The "agent" / "computer use" demo cards on certain pages display animated Claude controlling a browser — the static screenshot doesn't fully capture the animation chrome.
+
+## Local overrides（本站：tw-ai-literacy-4d）
+
+以下為本站針對繁體中文教材情境、刻意偏離上方規範的項目。
+
+### Accessibility — 珊瑚色的使用範圍
+
+`{colors.primary}`（#cc785c）當小字或小按鈕底色時未達 WCAG AA：
+
+| 組合 | 對比 |
+|---|---|
+| #cc785c 文字 on canvas | 3.11 |
+| #cc785c 文字 on surface-card | 2.71 |
+| 白字 on #cc785c | 3.28 |
+
+因此本站新增兩個 token，並限制 `primary` 的用途：
+
+- `primary-ink` #9c4f36 — 眉標、連結、所有珊瑚色小字（canvas 5.56／card 4.85）
+- `primary-strong` #a9583e — `button-primary`、`badge-coral`、啟用中的篩選籤底色（白字 5.06）
+- `primary` #cc785c — 只用於大面積色塊（coral callout、字卡）、24px 以上的裝飾數字、深色底上的文字（深色底 5.47）、圖解的強調填色
+
+`muted` 由 #6c6a64 調深為 #65625b（card 5.04）；`muted-soft` 不再當作文字色，只用於分隔線與裝飾。
+
+### Typography — 中文閱讀
+
+- 內文行高 1.8（原 1.55），次要內文 15px／1.75
+- 段落最大寬度 40em（16px 約 40 個中文字）
+- 標題 `text-wrap: balance`、段落 `text-wrap: pretty`
+
+### Diagrams — 概念圖
+
+長文以 `components/diagrams/` 的靜態圖呈現。圖內強調色只用 `primary`，語意色只用 `accent-teal`（正確）、`accent-amber`（注意）、`error`（錯誤），與 `remotion/` 動畫一致。
