@@ -8,7 +8,8 @@ export function Footer() {
         <div className="flex items-center gap-4">
           <Mark size={52} />
           <div>
-            <span className="title-md block text-on-dark">{site.title}</span>
+            <span className="title-md block text-on-dark">{site.brand}</span>
+            <span className="font-display block text-[13px] italic text-on-dark-soft">{site.brandNote}</span>
             <span className="caption text-on-dark-soft">整編：{site.author}</span>
           </div>
         </div>

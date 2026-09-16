@@ -5,7 +5,7 @@ import { PageNav } from "@/components/PageNav";
 import { disclaimer, highlights, nav, sources } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "資料來源｜AI 素養教育 4D 框架",
+  title: "資料來源｜AI Fluency 4D 框架",
   description: "本站每一段內容的出處。內容是整理、改寫而來，並非自創的框架。",
 };
 
@@ -36,7 +36,7 @@ export default function SourcesPage() {
       <PageHeader
         index="05"
         eyebrow="資料來源"
-        title="出處"
+        title="資料來源"
         lead="這個網站的內容是整理、改寫而來的，每筆來源都標出用在哪幾頁。"
         highlights={highlights["/sources"]}
       />

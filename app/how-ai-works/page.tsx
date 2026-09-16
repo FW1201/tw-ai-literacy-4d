@@ -8,7 +8,7 @@ import { Venn4 } from "@/components/diagrams/Venn4";
 import { collision, highlights, mechanisms } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "AI 怎麼運作｜AI 素養教育 4D 框架",
+  title: "Generative AI 基本原理｜AI Fluency 4D 框架",
   description: "用白話說明 AI 的四個運作方式：接龍式生成、知識、工作記憶、可控性，每一個都附一支可以投影的動畫。",
 };
 
@@ -18,7 +18,7 @@ export default function HowAiWorksPage() {
       <PageHeader
         index="02"
         eyebrow="AI 怎麼運作"
-        title="為什麼會講錯"
+        title="Generative AI 基本原理"
         lead="先弄懂 AI 是怎麼運作的，才看得出它哪裡出錯。看圖和動畫就好，英文名詞不用背。"
         highlights={highlights["/how-ai-works"]}
       />

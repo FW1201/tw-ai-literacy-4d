@@ -5,10 +5,10 @@ import { Footer } from "@/components/Footer";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: `${site.title}｜台灣 K-12 教學設計指南`,
+  title: site.title,
   description: site.tagline,
   openGraph: {
-    title: `${site.title}｜台灣 K-12 教學設計指南`,
+    title: site.title,
     description: site.tagline,
     type: "article",
     locale: "zh_TW",

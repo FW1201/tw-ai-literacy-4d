@@ -1,5 +1,8 @@
 export const site = {
-  title: "AI 素養教育 4D 框架",
+  title: "AI Fluency 4D 框架臺灣教育體系應用（Original by Anthropic）",
+  /** 左上角與頁尾分兩行顯示，完整字串太長會擠掉導覽連結 */
+  brand: "AI Fluency 4D 框架臺灣教育體系應用",
+  brandNote: "Original by Anthropic",
   tagline: "把 AI 素養拆成四件老師教得來、學生練得起來的事",
   author: "吳奇（Kevin Wu）",
   updated: "2026-09-16",
@@ -55,7 +58,7 @@ export const entries = [
 
 export const hero = {
   eyebrow: "台灣 K-12 教育現場整編",
-  headline: "原則已經有了。\n那「怎麼做」呢？",
+  headline: "AI Fluency 4D Framework\n臺灣教育現場之實踐應用",
   lead:
     "教育部的指引告訴我們哪些事不能做，UNESCO 告訴我們能力要到哪裡。可是打開 AI 的那一刻，老師到底該做什麼？這個網站想回答這一題。",
 };

@@ -7,7 +7,7 @@ import { AlignmentMatrix } from "@/components/diagrams/AlignmentMatrix";
 import { fourD, highlights, loops } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "4D 框架｜AI 素養教育 4D 框架",
+  title: "定義 AI Fluency｜AI Fluency 4D 框架",
   description: "委託、描述、辨識、盡責這四個動作和兩組循環，以及它們對應到教育部原則與 UNESCO 能力的哪裡。",
 };
 
@@ -24,7 +24,7 @@ export default function FrameworkPage() {
       <PageHeader
         index="01"
         eyebrow="4D 框架"
-        title="四個動作"
+        title="定義 AI Fluency"
         lead="委託、描述、辨識、盡責。每次用 AI，把這四個問題想過一遍，事情才算做完整。"
         highlights={highlights["/framework"]}
       />

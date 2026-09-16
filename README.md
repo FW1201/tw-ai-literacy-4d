@@ -1,4 +1,4 @@
-# AI 素養教育 4D 框架
+# AI Fluency 4D 框架臺灣教育體系應用（Original by Anthropic）
 
 台灣 K-12 教育現場適用的 AI 素養教學設計指南，6 頁式閱讀教材。
 

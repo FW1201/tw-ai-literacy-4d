@@ -13,7 +13,7 @@ import { assessments, gradeBands, highlights, studentLocalization } from "@/lib/
 import { CASES, MODE_LABEL, TRACK_LABEL } from "@/lib/cases";
 
 export const metadata: Metadata = {
-  title: "課堂實踐｜AI 素養教育 4D 框架",
+  title: "課堂實踐與思考｜AI Fluency 4D 框架",
   description: "不同年級怎麼教、作業怎麼評、16 個可以照著做的案例，以及改寫成台灣升學情境的學生篇。",
 };
 
@@ -28,7 +28,7 @@ export default function ClassroomPage() {
       <PageHeader
         index="03"
         eyebrow="課堂實踐"
-        title="帶進課堂"
+        title="課堂實踐與思考"
         lead="不同年級要多練什麼、作業什麼時候評，再加上可以照著做的案例。"
         highlights={highlights["/classroom"]}
       />

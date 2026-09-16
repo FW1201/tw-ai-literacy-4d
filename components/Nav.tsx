@@ -18,10 +18,13 @@ export function Nav() {
   return (
     <header className="site-header sticky top-0 z-50 border-b border-hairline-soft bg-canvas">
       <div className="shell flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="group/brand flex items-center gap-3 shrink-0">
+        <Link href="/" className="group/brand flex min-w-0 items-center gap-3">
           <Mark size={36} />
-          <span className="title-sm tracking-tight transition-colors group-hover/brand:text-primary-ink">
-            {site.title}
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="line-clamp-2 text-[13px] font-medium tracking-tight text-ink transition-colors group-hover/brand:text-primary-ink sm:text-[15px] sm:whitespace-nowrap">
+              {site.brand}
+            </span>
+            <span className="font-display text-[12px] italic leading-none text-muted">{site.brandNote}</span>
           </span>
         </Link>
 

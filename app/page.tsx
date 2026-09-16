@@ -28,7 +28,14 @@ function Hero() {
       <div className="shell grid gap-12 py-16 sm:py-24 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-section">
         <div>
           <span className="badge-pill">{hero.eyebrow}</span>
-          <h1 className="display-xl mt-6 whitespace-pre-line">{hero.headline}</h1>
+          {/* 英文、中文各一行；字級隨欄寬縮放，避免中文被拆在詞中間 */}
+          <h1 className="display-xl mt-6 text-[clamp(1.75rem,6vw,3.25rem)] lg:text-[clamp(2rem,3.5vw,3.25rem)]">
+            {hero.headline.split("\n").map((line) => (
+              <span key={line} className="block sm:whitespace-nowrap">
+                {line}
+              </span>
+            ))}
+          </h1>
           <p className="body-md measure mt-6 text-body-strong">
             {hero.lead}
           </p>

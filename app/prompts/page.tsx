@@ -26,7 +26,7 @@ const fluencyCounts = Object.fromEntries(
 ) as Record<Fluency, number>;
 
 export const metadata: Metadata = {
-  title: "提示詞庫｜AI 素養教育 4D 框架",
+  title: "提示詞庫｜AI Fluency 4D 框架",
   description: "60 筆可以直接複製的 Claude 教學提示詞，能依使用情境和 4D 動作篩選。",
 };
 
