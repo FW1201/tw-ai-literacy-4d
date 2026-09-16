@@ -23,7 +23,7 @@ export default function FrameworkPage() {
     <>
       <PageHeader
         index="01"
-        eyebrow="4D 框架"
+        eyebrow="定義 AI Fluency"
         title="定義 AI Fluency"
         lead="委託、描述、辨識、盡責。每次用 AI，把這四個問題想過一遍，事情才算做完整。"
         highlights={highlights["/framework"]}

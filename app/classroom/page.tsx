@@ -27,7 +27,7 @@ export default function ClassroomPage() {
     <>
       <PageHeader
         index="03"
-        eyebrow="課堂實踐"
+        eyebrow="課堂實踐與思考"
         title="課堂實踐與思考"
         lead="不同年級要多練什麼、作業什麼時候評，再加上可以照著做的案例。"
         highlights={highlights["/classroom"]}
