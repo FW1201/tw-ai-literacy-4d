@@ -90,7 +90,15 @@ export default function PromptsPage() {
                 {p.title}
                 <span className="caption ml-2 font-mono font-normal text-muted">{p.id}</span>
               </h2>
-              <p className="body-md mt-2 text-body">{p.scenario.replace(/^[^：]+：/, "")}</p>
+              {/* 桌機直接顯示情境；手機預設收合（display:none 的那份不進無障礙樹，不會重複朗讀） */}
+              <p className="body-md mt-2 hidden text-body md:block">{p.scenario.replace(/^[^：]+：/, "")}</p>
+              <details className="group/scn mt-2 md:hidden">
+                <summary className="caption cursor-pointer list-none text-muted marker:content-none">
+                  <span className="group-open/scn:hidden">情境說明 ▾</span>
+                  <span className="hidden group-open/scn:inline">收合情境 ▴</span>
+                </summary>
+                <p className="body-md mt-1.5 text-body">{p.scenario.replace(/^[^：]+：/, "")}</p>
+              </details>
 
               {p.note && (
                 <p className="body-sm mt-3 rounded-md bg-surface-soft px-4 py-2.5 text-body">

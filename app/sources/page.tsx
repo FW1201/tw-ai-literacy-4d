@@ -14,15 +14,13 @@ const USED_ON: [RegExp, string[]][] = [
   [/Framework & Foundations/, ["/framework"]],
   [/Capabilities and Limitations/, ["/how-ai-works"]],
   [/pK–12 Educators/, ["/classroom"]],
-  [/Train the Trainer/, ["/workshop"]],
   [/Teaching AI Fluency/, ["/classroom"]],
   [/for students/, ["/classroom"]],
-  [/Human Agent Teams/, ["/workshop"]],
   [/教育部/, ["/framework", "/classroom"]],
   [/teachers/, ["/framework"]],
   [/students\./, ["/classroom"]],
   [/課程綱要/, ["/classroom"]],
-  [/課程模組設計指南/, ["/framework", "/how-ai-works", "/classroom", "/workshop"]],
+  [/課程模組設計指南/, ["/framework", "/how-ai-works", "/classroom"]],
   [/Kharbach/, ["/classroom"]],
 ];
 

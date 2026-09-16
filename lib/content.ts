@@ -11,7 +11,6 @@ export const nav = [
   { href: "/how-ai-works", label: "AI 怎麼運作" },
   { href: "/classroom", label: "課堂實踐" },
   { href: "/prompts", label: "提示詞庫" },
-  { href: "/workshop", label: "研習工作坊" },
   { href: "/sources", label: "資料來源" },
 ];
 
@@ -46,15 +45,8 @@ export const entries = [
     meta: "教學四類",
   },
   {
-    href: "/workshop",
-    order: "05",
-    title: "研習工作坊",
-    detail: "90 分鐘的教師研習流程、配套文件，以及給校長與教學組長的導入提醒。",
-    meta: "含配套文件",
-  },
-  {
     href: "/sources",
-    order: "06",
+    order: "05",
     title: "資料來源",
     detail: "每一節內容的出處。本站是整編與在地化改寫，不是原創框架。",
     meta: "",
@@ -66,8 +58,6 @@ export const hero = {
   headline: "原則已經有了。\n那「怎麼做」呢？",
   lead:
     "教育部的指引劃出紅線，UNESCO 的能力框架標示等級——但兩者都沒有告訴老師，實際跟 AI 互動的那一刻，具體要做哪幾件事。這份教材補上中間那一層。",
-  primaryCta: { label: "從四層定位開始", href: "#positioning" },
-  secondaryCta: { label: "看研習工作坊", href: "#workshop" },
 };
 
 export const fourLayers = [
@@ -284,49 +274,6 @@ export const assessments = [
   },
 ];
 
-export const workshop = {
-  duration: "90 分鐘",
-  audience: "K-12 在職教師，不限學科",
-  size: "12–30 人，4–6 人一組",
-  steps: [
-    {
-      minutes: 10,
-      time: "10 分",
-      title: "開場",
-      detail: "從「指引有原則、但沒有操作手把」破題，蒐集每位教師上一次委派 AI 做了什麼。",
-    },
-    {
-      minutes: 20,
-      time: "20 分",
-      title: "4D 框架導入",
-      detail: "用「AI 一本正經講錯」的真實案例暖身，帶出四個機制，再逐一講解 4D 與兩組循環。",
-    },
-    {
-      minutes: 30,
-      time: "30 分",
-      title: "分組實作",
-      detail: "依任教學段分組，用分年段練習卡設計一個下週用得到的迷你活動。",
-    },
-    {
-      minutes: 20,
-      time: "20 分",
-      title: "共備產出",
-      detail: "兩組互換練習卡，用「辨識」角色互相提問，回饋 2–3 點具體修改建議。",
-    },
-    {
-      minutes: 10,
-      time: "10 分",
-      title: "收斂與承諾",
-      detail: "每人寫一句「下週我會在＿＿這堂課，用 4D 的＿＿環節」。",
-    },
-  ],
-  files: [
-    { name: "主持人手冊", format: "DOCX", detail: "逐節流程稿：時間、話術、引導問題、常見狀況應對" },
-    { name: "簡報", format: "PPTX", detail: "9 頁投影片，含逐頁備忘稿" },
-    { name: "分年段練習卡", format: "DOCX", detail: "國小／國中／高中三份工作單" },
-  ],
-};
-
 export const studentLocalization = [
   {
     origin: "AI 輔助履歷／CV 撰寫",
@@ -344,13 +291,6 @@ export const studentLocalization = [
     origin: "Being the human in the loop",
     local: "對應教育部指引學生篇：不應只是複製貼上系統產出，要為最終決定負責",
   },
-];
-
-export const governance = [
-  { title: "角色清楚", detail: "導入前先講清楚誰負責選型、誰負責審核內容、誰負責處理學生申訴。" },
-  { title: "書面共識", detail: "訂一份簡短的校內 AI 使用共識文件，而非只靠口頭默契。" },
-  { title: "漸進釋放", detail: "先在一個年級或科目試辦，再擴大，避免全校同時導入無法收拾。" },
-  { title: "適當存取", detail: "比照資料最小化原則，AI 工具不應取得超出教學需求的學生資料。" },
 ];
 
 export const sources = [
@@ -373,11 +313,6 @@ export const sources = [
         href: "https://academy.claude.com/courses/ai-fluency-for-k-12-educators",
       },
       {
-        label: "AI Fluency for pK-12 Train the Trainer",
-        note: "研習工作坊套件結構（Anthropic × American Federation of Teachers）",
-        href: "https://academy.claude.com/courses/ai-fluency-for-pk-12-train-the-trainer",
-      },
-      {
         label: "Teaching AI Fluency",
         note: "三種評量策略（原為高教取向，本站已在地化改寫）",
         href: "https://academy.claude.com/courses/teaching-ai-fluency",
@@ -386,11 +321,6 @@ export const sources = [
         label: "AI Fluency for students",
         note: "學生素養篇（原為大學生涯取向，本站改寫為 K-12 升學情境）",
         href: "https://academy.claude.com/courses/ai-fluency-for-students",
-      },
-      {
-        label: "Building Effective Human Agent Teams",
-        note: "校務治理四原則（原為企業團隊取向）",
-        href: "https://academy.claude.com/courses/building-effective-human-agent-teams",
       },
     ],
   },
@@ -437,7 +367,6 @@ export const highlights: Record<string, string[]> = {
   "/how-ai-works": ["AI 為什麼會自信地講錯", "四個機制的強項與弱點", "每個機制一支可投影的動畫"],
   "/classroom": ["三個學段各自側重哪個 D", "評量在作業前中後怎麼收", "16 個可以照做的案例"],
   "/prompts": ["先看懂一筆提示詞的七段", "依情境、4D、關鍵字找", "一鍵複製，換掉方括號就能用"],
-  "/workshop": ["90 分鐘五段流程", "三份可直接用的配套文件", "學校導入的四個治理提醒"],
   "/sources": ["每一節內容的出處", "來源與頁面的對應", "本站的非官方聲明"],
 };
 

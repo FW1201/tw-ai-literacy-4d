@@ -9,7 +9,6 @@ const AUDIENCE: Record<string, string> = {
   "/how-ai-works": "想向學生解釋 AI 的老師",
   "/classroom": "準備設計課程的老師",
   "/prompts": "明天就要用 Claude 的老師",
-  "/workshop": "負責帶研習的講師、組長",
   "/sources": "需要查證與引用的人",
 };
 
@@ -69,7 +68,7 @@ function Positioning() {
 function Entries() {
   return (
     <Band tone="canvas">
-      <Heading eyebrow="從哪裡開始" title="六個入口，依你的需要挑" />
+      <Heading eyebrow="從哪裡開始" title="五個入口，依你的需要挑" />
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {entries.map((entry) => (
           <Link
