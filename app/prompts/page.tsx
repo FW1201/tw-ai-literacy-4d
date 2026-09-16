@@ -35,7 +35,7 @@ export default function PromptsPage() {
     <>
       <PageHeader
         index="04"
-        eyebrow="Prompt Reference"
+        eyebrow="Prompts for Teaching"
         title="Prompt Reference"
         lead="複製下來，把方括號裡的年級和主題換成你的，就能貼進 Claude。"
         highlights={highlights["/prompts"]}

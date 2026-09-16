@@ -35,7 +35,7 @@ export default function SourcesPage() {
     <>
       <PageHeader
         index="05"
-        eyebrow="資料來源"
+        eyebrow="Sources & Citations"
         title="資料來源"
         lead="這個網站的內容是整理、改寫而來的，每筆來源都標出用在哪幾頁。"
         highlights={highlights["/sources"]}

@@ -17,7 +17,7 @@ export default function HowAiWorksPage() {
     <>
       <PageHeader
         index="02"
-        eyebrow="Generative AI 基本原理"
+        eyebrow="How Generative AI Works"
         title="Generative AI 基本原理"
         lead="先弄懂 AI 是怎麼運作的，才看得出它哪裡出錯。看圖和動畫就好，英文名詞不用背。"
         highlights={highlights["/how-ai-works"]}
