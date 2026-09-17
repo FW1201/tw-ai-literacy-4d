@@ -1,21 +1,23 @@
 # AI Fluency 4D 框架臺灣教育體系應用（Original by Anthropic）
 
-台灣 K-12 教育現場適用的 AI 素養教學設計指南，6 頁式閱讀教材。
+**AI Fluency 4D Framework — 臺灣教育現場之實踐應用**
+
+台灣 K-12 教育現場適用的 AI 素養教學設計指南，6 頁式閱讀教材。線上版：<https://tw-ai-literacy-4d.vercel.app>
 
 <img src="public/brand/logo.png" width="96" alt="站台標誌" />
 
-> 教育部的指引劃出紅線，UNESCO 的能力框架標示等級——但兩者都沒有告訴老師，實際跟 AI 互動的那一刻，具體要做哪幾件事。這份教材補上中間那一層。
+> 教育部的指引告訴我們哪些事不能做，UNESCO 告訴我們能力要到哪裡。可是打開 AI 的那一刻，老師到底該做什麼？這個網站想回答這一題。
 
 ## 內容
 
-| 頁面 | 說明 |
-|------|------|
-| `/` 首頁 | 四層定位：教育部指引 → UNESCO CFT/CFS → 4D 框架 → 學科落地 |
-| `/framework` | 委託・描述・辨識・盡責、兩組循環、對照教育部原則與 UNESCO 能力；概念動畫 1 支 |
-| `/how-ai-works` | 接龍式生成／知識／工作記憶／可控性四機制，含能力光譜、誤解→事實、交疊圖；概念動畫 4 支 |
-| `/classroom` | 分年段熱力圖、評量三時間點、16 筆實踐案例、學生素養在地化 |
-| `/prompts` | 60 筆 Claude 教學提示詞，七段結構解剖、搜尋與篩選、一鍵複製 |
-| `/sources` | 全部出處，標註各自支撐哪一頁 |
+| 路徑 | 頁面名稱 | 英文副標 | 說明 |
+|------|------|------|------|
+| `/` | 首頁 | — | 四層定位：教育部指引 → UNESCO CFT/CFS → 4D 框架 → 學科應用 |
+| `/framework` | 定義 AI Fluency | The 4D Framework | 委託、描述、辨識、盡責，兩組循環，對照教育部原則與 UNESCO 能力；概念動畫 1 支 |
+| `/how-ai-works` | Generative AI 基本原理 | How Generative AI Works | 接龍式生成、知識、工作記憶、可控性四個機制，含能力光譜、誤解與實際、交疊圖；概念動畫 4 支 |
+| `/classroom` | 課堂實踐與思考 | Classroom Practice | 學段側重熱力圖、評量時機、16 筆實踐案例、學生篇改寫 |
+| `/prompts` | Prompt Reference | Prompts for Teaching | 60 筆 Claude 教學提示詞，七段結構、搜尋與篩選、一鍵複製 |
+| `/sources` | 資料來源 | Sources & Citations | 全部出處，標註各自用在哪一頁 |
 
 ## 資料來源
 
