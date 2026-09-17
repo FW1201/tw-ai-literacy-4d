@@ -624,10 +624,27 @@ When photography is used (rare — mostly testimonials), avatars crop to perfect
 
 站台標誌改用作者的金色徽章（`public/brand/logo.png`，favicon 由 `app/icon.png`、`app/apple-icon.png` 提供），一律圓形裁切、不加底色。徽章的金色只出現在標誌本身，不擴散成介面色。
 
+### Naming — 站名與頁面名稱
+
+- 站名：「AI Fluency 4D 框架臺灣教育體系應用（Original by Anthropic）」。左上角與頁尾分兩行：第一行 `site.brand`，第二行 `site.brandNote`（「Original by Anthropic」，display 字體斜體小字）；手機版站名 13px，放不下時換行，不以省略號截斷
+- 封面大標題：「AI Fluency 4D Framework」／「臺灣教育現場之實踐應用」，英文、中文各一行，字級隨欄寬縮放
+- 導覽列、頁面大標題、首頁入口卡、頁底上一頁／下一頁一律用同一個名稱，來源是 `lib/content.ts` 的 `nav`
+- 內頁頁首小字＝頁碼＋英文副標，與中文大標題互補，不重複同一句
+
+| 路徑 | 頁碼 | 頁面名稱 | 英文副標 |
+|---|---|---|---|
+| `/framework` | 01 | 定義 AI Fluency | The 4D Framework |
+| `/how-ai-works` | 02 | Generative AI 基本原理 | How Generative AI Works |
+| `/classroom` | 03 | 課堂實踐與思考 | Classroom Practice |
+| `/prompts` | 04 | Prompt Reference | Prompts for Teaching |
+| `/sources` | 05 | 資料來源 | Sources & Citations |
+
+內頁頁首結構：珊瑚短線 → 小字（頁碼／英文副標）→ 大標題 → 一句導言 → 三點重點條；右側以大號淡字重複頁碼（僅 md 以上）。
+
 ### Motion — 流暢度
 
 - 換頁：`app/template.tsx` 讓內容區淡入並上移 8px（320ms），導覽列與頁尾不參與；`<html data-scroll-behavior="smooth">` 讓換頁時直接回到頂端，不走平滑捲動
 - 不做綁定捲動位置的進場動畫，也不讓動畫區塊黏著畫面：捲動時內容不應自己移動
-- 導覽列：捲動後出現細陰影；目前頁面以珊瑚底線標示
+- 導覽列：捲動後出現細陰影；目前頁面以珊瑚底線標示。頁首、頁內目錄、篩選列等固定元素一律用不透明底色，半透明加模糊經過深色區塊會變灰
 - 卡片 hover：上移 2px ＋ 柔和陰影，統一 `--ease-out` 200ms
 - `prefers-reduced-motion: reduce` 時上述動效全部關閉
