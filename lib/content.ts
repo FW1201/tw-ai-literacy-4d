@@ -5,7 +5,7 @@ export const site = {
   brandNote: "Original by Anthropic",
   tagline: "把 AI 素養拆成四件老師教得來、學生練得起來的事",
   author: "吳奇（Kevin Wu）",
-  updated: "2026-09-16",
+  updated: "2026-09-17",
   repo: "https://github.com/FW1201/tw-ai-literacy-4d",
 };
 
